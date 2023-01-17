@@ -1,0 +1,22 @@
+[
+  {
+    "name": "nature",
+    "categories": [
+      "waterfall",
+      "forest stream",
+      "thunderstorm",
+      "beach",
+      "rainforest"
+    ]
+  },
+
+  {
+    "name": "music",
+    "categories": ["arabic", "tibet", "japan", "africa"]
+  },
+
+  {
+    "name": "waves",
+    "categories": ["frequency", "deep atonal", "three prayers", "autumn sky"]
+  }
+]

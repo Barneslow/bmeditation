@@ -1,0 +1,397 @@
+[
+  {
+    "name": "Oscar Wilde",
+    "type": "author",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Oscar_Wilde_portrait_%28cropped%29.jpg/415px-Oscar_Wilde_portrait_%28cropped%29.jpg?20200615111107",
+    "location": "Ireland",
+    "about": "Oscar Fingal O'Flahertie Wills Wilde was an Irish poet and playwright. After writing in different forms throughout the 1880s, he became one of the most popular playwrights in London in the early 1890s.",
+    "period": 1880
+  },
+  {
+    "name": "Socrates",
+    "type": "classical",
+    "imageUrl": "https://media.sciencephoto.com/c0/45/56/65/c0455665-800px-wm.jpg",
+    "location": "Ancient Greece",
+    "about": "Socrates was a Greek philosopher from Athens who is credited as the founder of Western philosophy and among the first moral philosophers of the ethical tradition of thought.",
+    "period": "400BC"
+  },
+  {
+    "name": "Plato",
+    "type": "classical",
+    "imageUrl": "https://cdn.britannica.com/88/149188-050-DC34842F/Plato-portrait-bust-original-Capitoline-Museums-Rome.jpg",
+    "location": "Ancient Greece",
+    "about": "Plato was a Greek philosopher born in Athens during the Classical period in Ancient Greece. He founded the Platonist school of thought and the Academy, the first institution of higher learning on the European continent.",
+    "period": "380BC"
+  },
+  {
+    "name": "Aristotle",
+    "type": "classical",
+    "imageUrl": "https://media.istockphoto.com/id/1217329715/photo/aristotle-sculpture.jpg?s=612x612&w=0&k=20&c=eGMl6typj9o5YDOaFLEgG1VfLN2gKrsu4jBk2M4m_QY=",
+    "location": "Ancient Greece",
+    "about": "Aristotle was a Greek philosopher and polymath during the Classical period in Ancient Greece. Taught by Plato, he was the founder of the Peripatetic school of philosophy.",
+    "period": "340BC"
+  },
+  {
+    "name": "Marcus Aurelius",
+    "type": "classical",
+    "imageUrl": "https://i.guim.co.uk/img/media/c5a3cb22f4ae7b4a4c7462ef4d2d0c71cacb3c65/0_232_2789_1673/master/2789.jpg?width=465&quality=85&dpr=1&s=none",
+    "location": "Ancient Rome",
+    "about": "Marcus Aurelius Antoninus was Roman emperor from 161 to 180 AD and a Stoic philosopher. He was the last of the rulers known as the Five Good Emperors, and the last emperor of the Pax Romana.",
+    "period": 120
+  },
+  {
+    "name": "Sun Tzu",
+    "type": "eastern",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/%E5%90%B4%E5%8F%B8%E9%A9%AC%E5%AD%99%E6%AD%A6.jpg",
+    "location": "Ancient China",
+    "about": "Sun Tzu was a Chinese military general, strategist, philosopher, and writer who lived during the Eastern Zhou period",
+    "period": "520BC"
+  },
+  {
+    "name": "Lao Tzu",
+    "type": "eastern",
+    "imageUrl": "https://www.organism.earth/library/docs/lao-tzu/headshot.webp",
+    "location": "Ancient China",
+    "about": "Laozi, also rendered as Lao Tzu, or Lao-Tze, was an ancient Chinese philosopher and writer. He is the reputed author of the Tao Te Ching, the founder of philosophical Taoism.",
+    "period": "550BC"
+  },
+  {
+    "name": "Confucius",
+    "type": "eastern",
+    "imageUrl": "https://media.istockphoto.com/id/177305558/photo/confucius.jpg?b=1&s=170667a&w=0&k=20&c=PhexCrDt8nHfBq5ugUFN3P9tTVjFM2-ImUbYQFZlaeE=",
+    "location": "Ancient China",
+    "about": "Confucius was a Chinese philosopher and politician of the Spring and Autumn period who is traditionally considered the paragon of Chinese sages.",
+    "period": "510BC"
+  },
+  {
+    "name": "Mahatma Gandhi",
+    "type": "eastern",
+    "imageUrl": "https://media.lex.dk/media/29721/standard_compressed_Mahatma_Gandhi.jpg",
+    "location": "India",
+    "about": "Mohandas Karamchand Gandhi was an Indian lawyer, anti-colonial nationalist and political ethicist who employed nonviolent resistance to lead the successful campaign for India's independence.",
+    "period": 1900
+  },
+  {
+    "name": "Eleanor Roosevelt",
+    "type": "political",
+    "imageUrl": "https://media.lex.dk/media/147626/standard_compressed_Eleanor_Roosevelt.jpg",
+    "location": "USA",
+    "about": "Anna Eleanor Roosevelt was an American political figure, diplomat, and activist. She was the first lady of the United States from 1933 to 1945.",
+    "period": 1940
+  },
+  {
+    "name": "Martin Luther King",
+    "type": "social",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/71E1+cvsB4L.jpg",
+    "location": "USA",
+    "about": "Martin Luther King Jr. was an American Baptist minister and activist, one of the most prominent leaders in the civil rights movement.",
+    "period": 1955
+  },
+  {
+    "name": "Albert Einstein",
+    "type": "academic",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg",
+    "location": "Germany",
+    "about": "Albert Einstein was a German-born theoretical physicist, widely acknowledged to be one of the greatest and most influential physicists of all time. Einstein is best known for developing the theory of relativity.",
+    "period": 1920
+  },
+
+  {
+    "name": "George Bernard Shaw",
+    "type": "author",
+    "imageUrl": "https://media.lex.dk/media/9297/standard_compressed_George_Bernard_Shaw.jpg",
+    "location": "Ireland",
+    "about": "George Bernard Shaw, known at his insistence simply as Bernard Shaw, was an Irish playwright, critic, polemicist and political activist. His influence on Western theatre, culture and politics extended from the 1880s to his death and beyond.",
+    "period": 1900
+  },
+  {
+    "name": "Winston Churchill",
+    "type": "political",
+    "imageUrl": "https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2019/10/RXEHCE.jpg",
+    "location": "United Kingdom",
+    "about": "Sir Winston Leonard Spencer Churchill was a British statesman, soldier, and writer who served as Prime Minister of the United Kingdom twice, from 1940 to 1945 during the Second World War, and again from 1951 to 1955.",
+    "period": 1950
+  },
+  {
+    "name": "Mother Teresa",
+    "type": "social",
+    "imageUrl": "https://live.staticflickr.com/4080/4928718453_ce10071e01_c.jpg",
+    "location": "Macedonian",
+    "about": "Mary Teresa Bojaxhiu, MC, better known as Mother Teresa, was an Indian-Albanian Catholic nun who, in 1950, founded the Missionaries of Charity.",
+    "period": 1950
+  },
+  {
+    "name": "Sarah Dessen",
+    "type": "author",
+    "imageUrl": "https://images2.penguinrandomhouse.com/author/47437",
+    "location": "USA",
+    "about": "Sarah Dessen is an American novelist.",
+    "period": 2000
+  },
+  {
+    "name": "L.M. Montgomery",
+    "type": "author",
+    "imageUrl": "https://uploads-ssl.webflow.com/5bd0d648eb9c4207eb508686/5c8816b854b42c690c8f99f7_Copy_of_lucymaudwrite.JPG",
+    "location": "Canada",
+    "about": "Lucy Maud Montgomery OBE, published as L. M. Montgomery, was a Canadian author best known for a collection of novels, essays, short stories, and poetry beginning in 1908 with Anne of Green Gables. ",
+    "period": 1910
+  },
+  {
+    "name": "Francis of Assisi",
+    "type": "social",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Saint_Francis_of_Assisi_by_Jusepe_de_Ribera.jpg",
+    "location": "Italy",
+    "about": "Giovanni di Pietro di Bernardone, better known as Saint Francis of Assisi, was a mystic Italian Catholic friar, founder of the Franciscans, and one of the most venerated figures in Christianity. He was inspired to lead a life of poverty and itinerant preaching. ",
+    "period": 1220
+  },
+  {
+    "name": "Mark Twain",
+    "type": "author",
+    "imageUrl": "https://cdn.pixabay.com/photo/2016/08/18/05/05/mark-twain-1602117_1280.jpg",
+    "location": "USA",
+    "about": "Samuel Langhorne Clemens, known by his pen name Mark Twain, was an American writer, humorist, entrepreneur, publisher, and lecturer. He was praised as the greatest humorist the United States has produced",
+    "period": 1850
+  },
+  {
+    "name": "Galileo Galilei",
+    "type": "academic",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Justus_Sustermans_-_Portrait_of_Galileo_Galilei_%28Uffizi%29.jpg",
+    "location": "Italy",
+    "about": "Galileo Galilei is considered the father of modern science and made major contributions to the fields of physics, astronomy, cosmology, mathematics and philosophy.",
+    "period": 1600
+  },
+
+  {
+    "name": "Benjamin Franklin",
+    "type": "political",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/Benjamin_Franklin_by_Joseph_Duplessis_1778.jpg",
+    "location": "USA",
+    "about": "Benjamin Franklin was an American polymath who was active as a writer, scientist, inventor, statesman, diplomat, printer, publisher, and political philosopher.",
+    "period": 1730
+  },
+  {
+    "name": "Abraham Lincoln",
+    "type": "political",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Abraham_Lincoln_O-55%2C_1861-crop.jpg",
+    "location": "USA",
+    "about": "Abraham Lincoln was an American lawyer, politician, and statesman who served as the 16th president of the United States from 1861 until his assassination in 1865.",
+    "period": 1840
+  },
+  {
+    "name": "Malcolm X",
+    "type": "social",
+    "imageUrl": "https://media.lex.dk/media/2749/standard_compressed_Malcolm_X.jpg",
+    "location": "USA",
+    "about": "Malcolm X was an American Muslim minister and human rights activist who was a prominent figure during the civil rights movement. A spokesman for the Nation of Islam and black empowerment until 1964.",
+    "period": 1940
+  },
+  {
+    "name": "Friedrich Nietzsche",
+    "type": "author",
+    "imageUrl": "https://media.sciencephoto.com/c0/40/93/39/c0409339-800px-wm.jpg",
+    "location": "Germany",
+    "about": "Friedrich Wilhelm Nietzsche was a German philosopher, prose poet, cultural critic, philologist, and composer whose work has exerted a profound influence on contemporary philosophy.",
+    "period": 1880
+  },
+  {
+    "name": "Steve Jobs",
+    "type": "business",
+    "imageUrl": "http://cdn.cnn.com/cnnnext/dam/assets/221114081400-02-steve-jobs-birkenstock-sandals-auction.jpg",
+    "location": "USA",
+    "about": "Steven Paul Jobs was an American entrepreneur, industrial designer, media proprietor, and investor. He was the co-founder, chairman, and CEO of Apple; the chairman and majority shareholder of Pixar",
+    "period": 1990
+  },
+  {
+    "name": "Pablo Picasso",
+    "type": "creative",
+    "imageUrl": "https://media.lex.dk/media/160788/standard_compressed_10498959a-1920x2381we.jpg",
+    "location": "Spain",
+    "about": "Pablo Ruiz Picasso was a Spanish painter, sculptor, printmaker, ceramicist and theatre designer who spent most of his adult life in France.",
+    "period": 1930
+  },
+
+  {
+    "name": "Samuel Smiles",
+    "type": "political",
+    "imageUrl": "https://framemark.vam.ac.uk/collections/2006AJ6576/full/735,/0/default.jpg",
+    "location": "United Kingdom",
+    "about": "Samuel Smiles was a British author and government reformer. Although he campaigned on a Chartist platform, he promoted the idea that more progress would come from new attitudes than from new laws.",
+    "period": 1850
+  },
+  {
+    "name": "William Shakespeare",
+    "type": "creative",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/William_Shakespeare_1609.jpg",
+    "location": "United Kingdom",
+    "about": "William Shakespeare was an English playwright, poet and actor. He is widely regarded as the greatest writer in the English language and the world's pre-eminent dramatist. He is often called England's national poet and the Bard of Avon.",
+    "period": 1600
+  },
+  {
+    "name": "Farrah Gray",
+    "type": "business",
+    "imageUrl": "https://aalbc.com/author-photos/farrah-gray.jpg",
+    "location": "USA",
+    "about": "Farrah Gray is an American businessman, investor, author, columnist, and motivational speaker. Gray was raised on Chicago's South side.",
+    "period": 2000
+  },
+  {
+    "name": "Jim Rohn",
+    "type": "business",
+    "imageUrl": "https://assets.entrepreneur.com/content/3x2/2000/20160304132547-jim-rohn.jpeg",
+    "location": "USA",
+    "about": "Emanuel James Rohn, professionally known as Jim Rohn, was an American entrepreneur, author and motivational speaker. ",
+    "period": 1960
+  },
+  {
+    "name": "Bohdi Sanders",
+    "type": "academic",
+    "imageUrl": "https://pbs.twimg.com/profile_images/746337162988163072/fRiSLhJ4_400x400.jpg",
+    "location": "USA",
+    "about": "Bohdi Sanders is a lifelong student of wisdom literature, the healing arts, and the martial arts His studies led him to explore the wisdom behind natural health, naturopathy, herbs, Reiki, Qigong, meditation.",
+    "period": 2000
+  },
+  {
+    "name": "Tommy Cooper",
+    "type": "creative",
+    "imageUrl": "https://i.dailymail.co.uk/1s/2019/01/10/21/8375992-6579185-image-m-23_1547155748578.jpg",
+    "location": "Wales",
+    "about": "Thomas Frederick Cooper was a Welsh prop comedian and magician. As an entertainer, his appearance was large and lumbering at 6 feet 3 inches, and he habitually wore a red fez when performing",
+    "period": 1960
+  },
+  {
+    "name": "Bill Murray",
+    "type": "creative",
+    "imageUrl": "https://mr.comingsoon.it/imgdb/persone/74749.jpg",
+    "location": "USA",
+    "about": "William James Murray is an American actor and comedian. He is known for his deadpan delivery. ",
+    "period": 1980
+  },
+  {
+    "name": "George Burns",
+    "type": "creative",
+    "imageUrl": "https://live.staticflickr.com/1681/24825515172_092d0be746_b.jpg",
+    "location": "USA",
+    "about": "George Burns was an American comedian, actor, writer, and singer, and one of the few entertainers whose career successfully spanned vaudeville, radio, film and television.",
+    "period": 1960
+  },
+  {
+    "name": "W. H. Auden",
+    "type": "author",
+    "imageUrl": "https://cdn.theatlantic.com/media/img/authors/2022/07/WH_Auden_82091991/original.jpg",
+    "location": "USA",
+    "about": "Wystan Hugh Auden was a British-American poet. Auden's poetry was noted for its stylistic and technical achievement, its engagement with politics, morals, love, and religion.",
+    "period": 1950
+  },
+  {
+    "name": "Will Rogers",
+    "type": "creative",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Will_Rogers_-_with_rope.JPG",
+    "location": "USA",
+    "about": "William Penn Adair Rogers was an American vaudeville performer, actor, and humorous social commentator. He was born as a citizen of the Cherokee Nation.",
+    "period": 1900
+  },
+  {
+    "name": "George Carlin",
+    "type": "creative",
+    "imageUrl": "https://www.rollingstone.com/wp-content/uploads/2020/08/GettyImages-141040944.jpg",
+    "location": "USA",
+    "about": "George Denis Patrick Carlin was an American comedian, actor, author, and social critic. Regarded as one of the most important and influential stand-up comedians of all time.",
+    "period": 1970
+  },
+  {
+    "name": "Lawrence Ferlinghetti",
+    "type": "creative",
+    "imageUrl": "https://au.rollingstone.com/wp-content/uploads/2021/02/lawrence-ferlinghetti-obit.jpg",
+    "location": "USA",
+    "about": "Lawrence Monsanto Ferlinghetti was an American poet, painter, social activist, and co-founder of City Lights Booksellers & Publishers.",
+    "period": 1970
+  },
+  {
+    "name": "Steven Wright",
+    "type": "creative",
+    "imageUrl": "https://pbs.twimg.com/profile_images/1231122286/steven_wright_comed_461901a_400x400.jpg",
+    "location": "USA",
+    "about": "Steven Alexander Wright is an American stand-up comedian, actor, writer, and film producer. He is known for his distinctly lethargic voice and slow, deadpan delivery of ironic, philosophical and sometimes nonsensical jokes",
+    "period": 1990
+  },
+  {
+    "name": "Golda Meir",
+    "type": "political",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Golda_Meir_03265u-2.jpg",
+    "location": "Israel",
+    "about": "Golda Meir was an Israeli politician, teacher, and kibbutznikit who served as the fourth prime minister of Israel from 1969 to 1974. She was the first woman to become head of government in Israel.",
+    "period": 1970
+  },
+  {
+    "name": "Joel Osteen",
+    "type": "social",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/Joel_Osteen_Preaching_%28cropped%29.jpg",
+    "location": "USA",
+    "about": "Joel Scott Osteen is an American lay preacher, televangelist, businessman and author based in Houston, Texas. Known for his weekly televised services and several best-selling books.",
+    "period": 2000
+  },
+  {
+    "name": "Audrey Hepburn",
+    "type": "creative",
+    "imageUrl": "https://i.pinimg.com/originals/91/c2/71/91c2719513ecf6f21e27aad1356ab653.jpg",
+    "location": "United Kingdom",
+    "about": "Audrey Hepburn was a British actress and humanitarian. Recognised as both a film and fashion icon, she was ranked by the American Film Institute as the third-greatest female screen legend from the Classical Hollywood cinema.",
+    "period": 1955
+  },
+  {
+    "name": "Bill Gates",
+    "type": "business",
+    "imageUrl": "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-09/bill-gates-mc-220915-f1f3f1.jpg",
+    "location": "USA",
+    "about": "William Henry Gates III is an American business magnate and philanthropist. He is a co-founder of Microsoft, along with his late childhood friend Paul Allen.",
+    "period": 1980
+  },
+  {
+    "name": "Thomas A. Edison",
+    "type": "academic",
+    "imageUrl": "https://www.biography.com/.image/t_share/MTc5OTQ3NDU2NTE4MTY5OTQ0/gettyimages-615312634.jpg",
+    "location": "USA",
+    "about": "Thomas Alva Edison was an American inventor and businessman. He developed many devices in fields such as electric power generation, mass communication, sound recording, and motion pictures.",
+    "period": 1900
+  },
+  {
+    "name": "Karl Marx",
+    "type": "political",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/99/Karl_Marx_Portrait.jpg?20220524060944",
+    "location": "Germany",
+    "about": "Karl Heinrich Marx FRSA was a German philosopher, economist, historian, sociologist, political theorist, journalist, critic of political economy, and socialist revolutionary. His best-known titles are the 1848 pamphlet The Communist Manifesto and the four-volume Das Kapital.",
+    "period": 1840
+  },
+  {
+    "name": "René Descartes",
+    "type": "academic",
+    "imageUrl": "https://media.sciencephoto.com/c0/30/44/74/c0304474-800px-wm.jpg",
+    "location": "France",
+    "about": "René Descartes was a French philosopher, scientist, and mathematician, widely considered a seminal figure in the emergence of modern philosophy and science.",
+    "period": 1620
+  },
+  {
+    "name": "Immanuel Kant",
+    "type": "academic",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Immanuel_Kant_%28portrait%29.jpg",
+    "location": "Germany",
+    "about": "Immanuel Kant was a German philosopher and one of the central Enlightenment thinkers. Kant's works in epistemology, metaphysics, ethics, and aesthetics have made him one of the most influential figures in modern Western philosophy.",
+    "period": 1760
+  },
+  {
+    "name": "Dante Alighieri",
+    "type": "creative",
+    "imageUrl": "https://www.churchtimes.co.uk/media/5682467/cover_2gcneh5-1.jpg",
+    "location": "Italy",
+    "about": "Dante Alighieri, probably baptized Durante di Alighiero degli Alighieri and often referred to as Dante, was an Italian poet, writer and philosopher.",
+    "period": 1280
+  },
+  {
+    "name": "J.R.R Tolkien",
+    "type": "author",
+    "imageUrl": "https://collectionimages.npg.org.uk/large/mw165745/JRR-Tolkien.jpg",
+    "location": "United Kingdom",
+    "about": "John Ronald Reuel Tolkien CBE FRSL was an English writer and philologist. He was the author of the high fantasy works The Hobbit and The Lord of the Rings.",
+    "period": 1940
+  }
+]
