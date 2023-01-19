@@ -17,9 +17,26 @@ const useNotifications = () => {
         alert("Failed to get push token for push notification!");
         return;
       }
-      const token = (await Notifications.getExpoPushTokenAsync()).data;
+      const token = (
+        await Notifications.getExpoPushTokenAsync({
+          experienceId: "@barneslow/bmeditation",
+        })
+      ).data;
 
-      console.log("Token", token);
+      try {
+        await fetch("https://b-meditation-api.vercel.app/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            token,
+          }),
+        });
+      } catch (err) {
+        console.log(err);
+      }
+
     } else {
       alert("Must use physical device for Push Notifications");
     }

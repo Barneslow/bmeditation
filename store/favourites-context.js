@@ -1,10 +1,10 @@
-import { createContext, useContext, useEffect, useState } from "react";
-// import {
-//   createFolderAndWriteFile,
-//   folderExists,
-//   readStorageFile,
-//   updatedFolder,
-// } from "../helpers/fileStorage";
+import { createContext, useContext, useState, useEffect } from "react";
+import {
+  createFolderAndWriteFile,
+  folderExists,
+  readStorageFile,
+  updatedFolder,
+} from "../helpers/fileStorage";
 import { QuoteContext } from "./quote-context";
 
 const DUMMY_FAVOR = [
@@ -34,38 +34,38 @@ const FavouritesContextProvider = ({ children }) => {
 
   const { quotes } = useContext(QuoteContext);
 
-  // useEffect(() => {
-  //   async function getFavouritesFromDisk() {
-  //     const exists = await folderExists("favourites");
+  useEffect(() => {
+    async function getFavouritesFromDisk() {
+      const exists = await folderExists("favourites");
 
-  //     if (!exists) {
-  //       await createFolderAndWriteFile("favourites", DUMMY_FAVOR);
-  //     }
+      if (!exists) {
+        await createFolderAndWriteFile("favourites", DUMMY_FAVOR);
+      }
 
-  //     const data = await readStorageFile("favourites");
+      const data = await readStorageFile("favourites");
 
-  //     data.forEach((entry) => {
-  //       entry.date = new Date(entry.date);
-  //       addInitialFavourites(entry);
-  //     });
+      data.forEach((entry) => {
+        entry.date = new Date(entry.date);
+        addInitialFavourites(entry);
+      });
 
-  //     setInitalLoad(false);
-  //   }
-  //   setInitalLoad(false);
+      setInitalLoad(false);
+    }
+    setInitalLoad(false);
 
-  //   getFavouritesFromDisk();
-  // }, []);
+    getFavouritesFromDisk();
+  }, []);
 
-  // async function addInitialFavourites(favourite) {
-  //   const quote = quotes.find((quote) => quote.id === favourite.id);
+  async function addInitialFavourites(favourite) {
+    const quote = quotes.find((quote) => quote.id === favourite.id);
 
-  //   if (quote) quote.liked = true;
-  //   setFavourites((currentFavourites) => [...currentFavourites, favourite]);
-  //   setSeletectedFavourites((currentFavourites) => [
-  //     ...currentFavourites,
-  //     favourite,
-  //   ]);
-  // }
+    if (quote) quote.liked = true;
+    setFavourites((currentFavourites) => [...currentFavourites, favourite]);
+    setSeletectedFavourites((currentFavourites) => [
+      ...currentFavourites,
+      favourite,
+    ]);
+  }
 
   async function addFavourite(favourite) {
     if (favourite.liked) {
@@ -80,7 +80,7 @@ const FavouritesContextProvider = ({ children }) => {
     try {
       const data = [...favourites, favourite];
 
-      // await updatedFolder("favourites", data);
+      await updatedFolder("favourites", data);
     } catch (err) {
       console.log(err);
     }
@@ -98,7 +98,7 @@ const FavouritesContextProvider = ({ children }) => {
     try {
       const newArray = favourites.filter((fav) => fav.id !== favourite.id);
 
-      // await updatedFolder("favourites", newArray);
+      await updatedFolder("favourites", newArray);
     } catch (err) {
       console.log(err);
     }

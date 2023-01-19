@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { View, Text, StyleSheet, ImageBackground } from "react-native";
 import { FavouritesContext } from "../store/favourites-context";
 import LikeButton from "./buttons/LikeButton";
-// import ShareButton from "./buttons/ShareButton";
+import ShareButton from "./buttons/ShareButton";
 
 const active = "rgba(37,122,253, 1)";
 
@@ -52,12 +52,12 @@ const AnimatedQuote = ({ quoteData, more }) => {
           width: "100%",
           justifyContent: "flex-end",
           position: "absolute",
-          bottom: 5,
+          bottom: 0,
           right: 5,
         }}
       >
         <View style={{ marginRight: 10 }}>
-          {/* <ShareButton quoteData={quoteData} /> */}
+          <ShareButton quoteData={quoteData} />
         </View>
         <LikeButton
           liked={isFavourited}

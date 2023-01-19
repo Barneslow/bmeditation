@@ -1,10 +1,5 @@
 import { createContext, useEffect, useState } from "react";
 import DUMMY_QUOTES from "../data/testData.json";
-// import {
-//   createFolderAndWriteFile,
-//   folderExists,
-//   readStorageFile,
-// } from "../helpers/fileStorage";
 
 export const QuoteContext = createContext({
   quotes: [],

@@ -1,14 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import {
-  Dimensions,
-  LayoutAnimation,
-  Pressable,
-  StyleSheet,
-  View,
-  UIManager,
-  Platform,
-  ScrollView,
-} from "react-native";
+import { useEffect, useState } from "react";
+import { Dimensions, Pressable, StyleSheet, View } from "react-native";
 import Animated, {
   FadeIn,
   Extrapolate,
@@ -24,33 +15,9 @@ const { height, width } = Dimensions.get("screen");
 
 const LIST_ITEM_HEIGHT = 140;
 
-// const toggleAnimation = {
-//   duration: 300,
-//   update: {
-//     duration: 500,
-//     type: LayoutAnimation.Types.easeInEaseOut,
-//     property: LayoutAnimation.Properties.opacity,
-//   },
-//   delete: {
-//     duration: 300,
-//     type: LayoutAnimation.Types.easeInEaseOut,
-//     property: LayoutAnimation.Properties.opacity,
-//   },
-// };
-
-// if (Platform.OS === "android") {
-//   if (UIManager.setLayoutAnimationEnabledExperimental) {
-//     UIManager.setLayoutAnimationEnabledExperimental(true);
-//   }
-// }
-
 const ListItem = (props) => {
   const { data, index, scrollY, scrolling } = props;
   const [showContent, setShowContent] = useState(false);
-
-  // useEffect(() => {
-  //   LayoutAnimation.configureNext(toggleAnimation);
-  // }, [showContent]);
 
   useEffect(() => {
     scrolling && setShowContent(false);

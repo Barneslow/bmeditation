@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { FavouritesContext } from "../../store/favourites-context";
 import LikeButton from "../buttons/LikeButton";
-// import ShareButton from "../buttons/ShareButton";
+import ShareButton from "../buttons/ShareButton";
 
 const { width } = Dimensions.get("screen");
 
@@ -123,7 +123,7 @@ const TextAnimator = ({ quote, finishedAnimation, randomQuote }) => {
         </Animated.Text>
         <Animated.View style={{ flexDirection: "row", transform: [{ scale }] }}>
           <View style={{ marginRight: 10 }}>
-            {/* <ShareButton quoteData={quote} /> */}
+            <ShareButton quoteData={quote} />
           </View>
           <LikeButton
             color={"rgba(37,122,253, 1)"}
