@@ -10,9 +10,9 @@ import {
 import AudioAnimation from "../components/AudioAnimation";
 import DropdownMenu from "../components/ui/DropdownMenu";
 import { Audio } from "expo-av";
-import LocalAudio from "../store/audio-context";
+import LocalAudio from "../contexts/audio-context";
 import { useAnimationState, View } from "moti";
-import { AnimatedContext } from "../store/animated-context";
+import { AnimatedContext } from "../contexts/animated-context";
 import { useIsFocused } from "@react-navigation/native";
 
 const { width, height } = Dimensions.get("screen");

@@ -12,6 +12,7 @@ const YesNoButtons = ({ funcYes, funcNo, icon1, icon2 }) => {
         flexDirection: "row",
         justifyContent: "space-evenly",
         paddingVertical: 10,
+        width: "100%",
       }}
     >
       <IconButtonContainer

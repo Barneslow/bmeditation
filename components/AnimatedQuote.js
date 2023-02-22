@@ -1,14 +1,13 @@
 import { useContext, useState } from "react";
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
-import { FavouritesContext } from "../store/favourites-context";
+import { View, Text, StyleSheet } from "react-native";
+import { Colors } from "../colors/colors";
+import { FavouritesContext } from "../contexts/favourites-context";
 import LikeButton from "./buttons/LikeButton";
 import ShareButton from "./buttons/ShareButton";
 
-const active = "rgba(37,122,253, 1)";
-
-const AnimatedQuote = ({ quoteData, more }) => {
+const ActionableQuote = ({ quoteData }) => {
   const favouritesCtx = useContext(FavouritesContext);
-  const { favourites, addFavourite, removeFavourite } = favouritesCtx;
+  const { addFavourite, removeFavourite } = favouritesCtx;
   const [isFavourited, setIsFavourited] = useState(quoteData.liked);
 
   function favouritesHandler() {
@@ -16,68 +15,44 @@ const AnimatedQuote = ({ quoteData, more }) => {
     isFavourited ? removeFavourite(quoteData) : addFavourite(quoteData);
   }
 
+  const { quote } = quoteData;
+
   return (
-    <ImageBackground
-      source={{
-        uri: "https://images.unsplash.com/photo-1528458965990-428de4b1cb0d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=729&q=80",
-      }}
-      style={styles.image}
-      imageStyle={{ opacity: 1 }}
-    >
-      <Text
-        style={{
-          fontFamily: "OpenSansSemiBold",
-          fontSize: 16,
-          color: "black",
-          padding: 10,
-        }}
-      >
-        {quoteData.quote}{" "}
-        {more && (
-          <Text
-            style={{
-              color: "blue",
-              fontSize: 16,
-              fontWeight: "bold",
-              fontStyle: "italic",
-            }}
-          >
-            &rarr;
-          </Text>
-        )}
+    <View style={styles.container}>
+      <Text style={{ fontFamily: "OpenSansRegular", fontSize: 16 }}>
+        {quote}
       </Text>
       <View
         style={{
           flexDirection: "row",
           width: "100%",
           justifyContent: "flex-end",
-          position: "absolute",
-          bottom: 0,
-          right: 5,
         }}
       >
         <View style={{ marginRight: 10 }}>
-          <ShareButton quoteData={quoteData} />
+          <ShareButton size={22} quoteData={quoteData} />
         </View>
         <LikeButton
           liked={isFavourited}
-          size={30}
-          color={active}
+          size={22}
+          color={Colors.blue}
           onPress={favouritesHandler}
         />
       </View>
-    </ImageBackground>
+    </View>
   );
 };
 
-export default AnimatedQuote;
+export default ActionableQuote;
 
 const styles = StyleSheet.create({
-  image: {
-    height: "100%",
+  container: {
+    padding: 10,
     borderRadius: 10,
-    borderWidth: 1,
-    borderColor: "white",
     overflow: "hidden",
+    backgroundColor: "#f9f1f1",
+    // borderColor: Colors.blue,
+    // borderWidth: 0.5,
+    elevation: 1,
   },
 });

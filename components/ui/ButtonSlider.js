@@ -1,6 +1,7 @@
 import { MotiView } from "moti";
 import { useEffect, useRef, useState } from "react";
 import { FlatList, Pressable, Text, Dimensions } from "react-native";
+import { Colors } from "../../colors/colors";
 import { toTitleCase } from "../../helpers/text";
 
 const { width } = Dimensions.get("screen");
@@ -8,10 +9,10 @@ const { width } = Dimensions.get("screen");
 const _spacing = 10;
 
 const _colors = {
-  active: "rgba(37,122,253, 1)",
+  active: Colors.blue,
   activeText: "white",
-  inactive: "orange",
-  inactiveText: "black",
+  inactive: "darkslategrey",
+  inactiveText: "white",
 };
 
 const ButtonSlider = ({ categories, onPress, children }) => {
@@ -39,7 +40,6 @@ const ButtonSlider = ({ categories, onPress, children }) => {
         paddingLeft: _spacing,
         minWidth: width,
         justifyContent: "center",
-        padding: 6,
       }}
       showsHorizontalScrollIndicator={false}
       horizontal

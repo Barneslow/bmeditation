@@ -6,13 +6,13 @@ import {
 import { StatusBar } from "expo-status-bar";
 import { ImageBackground, StyleSheet } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import QuoteContextProvider from "./store/quote-context";
-import JournalContextProvider from "./store/journal-context";
-import FavouritesContextProvider from "./store/favourites-context";
+import QuoteContextProvider from "./contexts/quote-context";
+import JournalContextProvider from "./contexts/journal-context";
+import FavouritesContextProvider from "./contexts/favourites-context";
 import { useFonts } from "expo-font";
 import Tabs from "./components/navigation/Tabs";
 import { useEffect, useState } from "react";
-import AnimatedContextProvider from "./store/animated-context";
+import AnimatedContextProvider from "./contexts/animated-context";
 import OnBoardingAnimation from "./screens/OnBoardingAnimation";
 import * as Notifications from "expo-notifications";
 import useNotifications from "./useNotifications";
@@ -33,21 +33,21 @@ export default function App() {
   const [routeName, setRouteName] = useState();
   const [animationOver, setAnimationOver] = useState(false);
 
-  const { registerForPushNotificationsAsync, handleNotificationResponse } =
-    useNotifications();
+  // const { registerForPushNotificationsAsync, handleNotificationResponse } =
+  //   useNotifications();
 
-  useEffect(() => {
-    registerForPushNotificationsAsync();
+  // useEffect(() => {
+  //   registerForPushNotificationsAsync();
 
-    const responseListnener = Notifications.addNotificationReceivedListener(
-      handleNotificationResponse
-    );
+  //   const responseListnener = Notifications.addNotificationReceivedListener(
+  //     handleNotificationResponse
+  //   );
 
-    return () => {
-      if (responseListnener)
-        Notifications.removeNotificationSubscription(responseListnener);
-    };
-  }, []);
+  //   return () => {
+  //     if (responseListnener)
+  //       Notifications.removeNotificationSubscription(responseListnener);
+  //   };
+  // }, []);
 
   const [fontsLoaded] = useFonts({
     OpenSansRegular: require("./assets/fonts/OpenSans/OpenSans-Regular.ttf"),
@@ -71,37 +71,33 @@ export default function App() {
         <JournalContextProvider>
           <QuoteContextProvider>
             <FavouritesContextProvider>
-              {animationOver ? (
-                <NavigationContainer
-                  ref={ref}
-                  onReady={() => {
-                    setRouteName(ref.getCurrentRoute().name);
-                  }}
-                  onStateChange={async () => {
-                    const previousRouteName = routeName;
-                    const currentRouteName = ref.getCurrentRoute().name;
-                    setRouteName(currentRouteName);
-                  }}
+              <NavigationContainer
+                ref={ref}
+                onReady={() => {
+                  setRouteName(ref.getCurrentRoute().name);
+                }}
+                onStateChange={async () => {
+                  const previousRouteName = routeName;
+                  const currentRouteName = ref.getCurrentRoute().name;
+                  setRouteName(currentRouteName);
+                }}
+              >
+                <LinearGradient
+                  colors={["rgba(0,0,0,0.8)", "transparent"]}
+                  style={styles.background}
                 >
-                  <LinearGradient
-                    colors={["rgba(0,0,0,0.8)", "transparent"]}
-                    style={styles.background}
+                  <ImageBackground
+                    source={{
+                      uri: "https://images.unsplash.com/photo-1519455953755-af066f52f1a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+                    }}
+                    style={styles.image}
+                    imageStyle={{ opacity: 0.3 }}
                   >
-                    <ImageBackground
-                      source={{
-                        uri: "https://images.unsplash.com/photo-1519455953755-af066f52f1a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-                      }}
-                      style={styles.image}
-                      imageStyle={{ opacity: 0.3 }}
-                    >
-                      <Tabs routeName={routeName} />
-                    </ImageBackground>
-                  </LinearGradient>
-                  <StatusBar style="light" backgroundColor="black" />
-                </NavigationContainer>
-              ) : (
-                <OnBoardingAnimation setAnimationOver={setAnimationOver} />
-              )}
+                    <Tabs routeName={routeName} />
+                  </ImageBackground>
+                </LinearGradient>
+                <StatusBar style="light" backgroundColor="black" />
+              </NavigationContainer>
             </FavouritesContextProvider>
           </QuoteContextProvider>
         </JournalContextProvider>
@@ -118,3 +114,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+
+// : (
+//   <OnBoardingAnimation setAnimationOver={setAnimationOver} />
+// )}

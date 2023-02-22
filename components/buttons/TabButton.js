@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Animated, Pressable, StyleSheet } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-
-const active = "rgba(37,122,253, 1)";
+import { Colors } from "../../colors/colors";
 
 const TabButton = (props) => {
   const { name, onPress, accessibilityState, animate } = props;
@@ -46,10 +45,9 @@ const TabButton = (props) => {
       <Animated.View
         duration={1000}
         style={{
-          backgroundColor: focused ? active : "orange",
+          backgroundColor: focused ? Colors.blue : "orange",
           borderRadius: 15,
           padding: 5,
-          borderWidth: 0.5,
           elevation: 4,
           opacity: focused ? 1 : 0.7,
           transform: [{ translateY }],

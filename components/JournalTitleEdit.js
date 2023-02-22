@@ -1,7 +1,7 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useContext, useState } from "react";
-import { JournalContext } from "../store/journal-context";
+import { JournalContext } from "../contexts/journal-context";
 import {
   Pressable,
   ScrollView,

@@ -1,49 +1,55 @@
 import { useNavigation } from "@react-navigation/native";
+import { useContext, useState } from "react";
 import {
   ImageBackground,
   View,
   Text,
   StyleSheet,
-  Pressable,
+  Modal,
+  Dimensions,
 } from "react-native";
+import { Colors } from "../colors/colors";
+import { JournalContext } from "../contexts/journal-context";
 import { truncateText } from "../helpers/text";
+import IconButton from "./buttons/IconButton";
+import YesNoButtons from "./buttons/YesNoButtons";
 
-const JournalEntryPreview = ({ item, index, entries }) => {
+const { width } = Dimensions.get("screen");
+
+const JournalEntryPreview = ({ item }) => {
+  const journalCtx = useContext(JournalContext);
+  const [modalVisible, setModalVisible] = useState(false);
   const navigation = useNavigation();
   const { title, date, text, id } = item;
 
   return (
-    <Pressable
-      style={({ pressed }) =>
-        pressed
-          ? [
-              styles.container,
-              {
-                backgroundColor: index % 2 == 0 ? "black" : "white",
-                opacity: 0.5,
-              },
-            ]
-          : [
-              styles.container,
-              {
-                backgroundColor: index % 2 == 0 ? "black" : "white",
-              },
-            ]
-      }
-      onPress={() =>
-        navigation.navigate("JournalEntry", {
-          id,
-          entries,
-        })
-      }
-    >
-      <ImageBackground
-        source={{
-          uri:
-            index % 2 == 0
-              ? "https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-              : "https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80",
+    <View style={styles.container}>
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(!modalVisible);
         }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>Are you sure?</Text>
+
+            <YesNoButtons
+              icon1="close"
+              icon2="trash"
+              funcYes={() => setModalVisible(!modalVisible)}
+              funcNo={() => {
+                setModalVisible(!modalVisible);
+                journalCtx.removeEntry(item);
+              }}
+            />
+          </View>
+        </View>
+      </Modal>
+      <ImageBackground
+        source={require("../assets/images/journalbackground.jpg")}
         style={styles.image}
         imageStyle={{ opacity: 0.7 }}
       >
@@ -52,25 +58,22 @@ const JournalEntryPreview = ({ item, index, entries }) => {
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "baseline",
-            paddingBottom: 10,
+            marginBottom: 10,
 
             borderBottomWidth: 0.5,
-            borderColor: index % 2 == 0 ? "white" : "black",
           }}
         >
           <Text
             style={{
-              color: index % 2 == 0 ? "white" : "black",
               fontSize: 20,
               fontWeight: "bold",
               flex: 1,
             }}
           >
-            {title}
+            {title.toUpperCase()}
           </Text>
           <Text
             style={{
-              color: index % 2 == 0 ? "white" : "black",
               fontSize: 16,
               fontStyle: "italic",
               fontWeight: "bold",
@@ -78,23 +81,52 @@ const JournalEntryPreview = ({ item, index, entries }) => {
               textAlign: "right",
             }}
           >
-            {date}
+            {date.toLocaleDateString()}
           </Text>
         </View>
-        <View>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
           <Text
             style={{
-              color: index % 2 == 0 ? "white" : "black",
               fontSize: 14,
               fontWeight: "500",
               lineHeight: 20,
+              flex: 1,
             }}
           >
             {truncateText(text, 150)}
           </Text>
+
+          <View
+            style={{
+              marginLeft: 2,
+              minHeight: 80,
+              justifyContent: "space-between",
+            }}
+          >
+            <IconButton
+              name="book"
+              color={Colors.blue}
+              onPress={() =>
+                navigation.navigate("JournalEntry", {
+                  id,
+                })
+              }
+            />
+            <IconButton
+              name="trash"
+              color={Colors.red}
+              onPress={() => setModalVisible(true)}
+            />
+          </View>
         </View>
       </ImageBackground>
-    </Pressable>
+    </View>
   );
 };
 
@@ -104,9 +136,38 @@ const styles = StyleSheet.create({
   container: {
     borderRadius: 10,
     overflow: "hidden",
+    marginBottom: 10,
+    borderColor: "darkslategrey",
+    borderWidth: 0.5,
+    backgroundColor: "white",
   },
   image: {
-    borderRadius: 10,
-    padding: 20,
+    padding: 15,
+  },
+
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+  },
+
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    elevation: 1,
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  modalText: {
+    marginBottom: 15,
+    fontSize: 24,
+    textAlign: "center",
   },
 });

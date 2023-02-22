@@ -5,7 +5,7 @@ import { StyleSheet, View } from "react-native";
 import AddJournal from "../components/AddJournal";
 import IconNumberOverlayButton from "../components/buttons/IconNumberOverlayButton";
 
-import { JournalContext } from "../store/journal-context";
+import { JournalContext } from "../contexts/journal-context";
 
 // import RNFS from "react-native-fs";
 
@@ -26,13 +26,13 @@ const JournalScreen = ({ navigation, route }) => {
   const isFocused = useIsFocused();
 
   useLayoutEffect(() => {
-    const formatedEntries = entries.map((entry) => {
-      const date = entry.date.toLocaleDateString();
+    // const formattedEntries = entries.map((entry) => {
+    //   const date = entry.date.toLocaleDateString();
 
-      const data = { ...entry, date };
+    //   const data = { ...entry, date };
 
-      return data;
-    });
+    //   return data;
+    // });
 
     navigation.setOptions({
       headerRight: () => (
@@ -42,9 +42,7 @@ const JournalScreen = ({ navigation, route }) => {
             color="white"
             size={35}
             number={entries?.length}
-            onPress={() =>
-              navigation.navigate("JournalEntries", formatedEntries)
-            }
+            onPress={() => navigation.navigate("JournalEntries")}
           />
         </View>
       ),

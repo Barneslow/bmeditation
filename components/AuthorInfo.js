@@ -1,8 +1,7 @@
 import { Text, View } from "react-native";
 import Animated, { FadeInUp } from "react-native-reanimated";
 import Ionicons from "@expo/vector-icons/Ionicons";
-
-const active = "rgba(37,122,253, 1)";
+import { Colors } from "../colors/colors";
 
 const AuthorInfo = ({ author }) => {
   const fontSize = author.name.length > 18 ? 25 : 30;
@@ -11,14 +10,12 @@ const AuthorInfo = ({ author }) => {
     <Animated.View
       entering={FadeInUp.delay(200).duration(500)}
       style={{
-        backgroundColor: "rgb(238,238,238)",
+        backgroundColor: "white",
         padding: 10,
         paddingTop: 5,
         borderRadius: 10,
         width: "100%",
-        position: "absolute",
-        bottom: -100,
-        elevation: 4,
+        elevation: 1,
       }}
     >
       <Text
@@ -58,7 +55,7 @@ const AuthorInfo = ({ author }) => {
           </Text>
         </View>
         <View style={{ flexDirection: "row", alignItems: "baseline" }}>
-          <Ionicons name="calendar" size={22} color={active} />
+          <Ionicons name="calendar" size={22} color={Colors.blue} />
           <Text
             style={{
               fontSize: 16,

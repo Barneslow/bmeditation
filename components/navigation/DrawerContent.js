@@ -3,11 +3,12 @@ import {
   DrawerContentScrollView,
   useDrawerStatus,
 } from "@react-navigation/drawer";
-import { FavouritesContext } from "../../store/favourites-context";
+import { FavouritesContext } from "../../contexts/favourites-context";
 import { useContext } from "react";
 import authorPhotos from "../../data/authors.json";
-import { AnimatedContext } from "../../store/animated-context";
+import { AnimatedContext } from "../../contexts/animated-context";
 import { useIsFocused } from "@react-navigation/native";
+import { Colors } from "../../colors/colors";
 
 const DrawerContent = (props) => {
   const favouritesCtx = useContext(FavouritesContext);
@@ -30,18 +31,16 @@ const DrawerContent = (props) => {
     <DrawerContentScrollView
       {...props}
       contentContainerStyle={{
-        backgroundColor: "rgb(210,210,210)",
+        backgroundColor: "#DDCAD9",
         flex: 1,
       }}
     >
       <Text
         style={{
-          textAlign: "center",
-          color: "rgb(250, 249, 246)",
+          color: Colors.red,
           fontSize: 24,
           fontFamily: "SourceSansProBlack",
           padding: 10,
-          backgroundColor: "#ab3745",
         }}
       >
         Authors
@@ -85,10 +84,10 @@ export default DrawerContent;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "rgb(238,238,238)",
-    margin: 5,
+    backgroundColor: "white",
+    margin: 3,
     borderRadius: 10,
-    padding: 5,
+    padding: 1,
     flexDirection: "row",
     alignItems: "center",
     elevation: 1,
@@ -105,5 +104,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: "OpenSansSemiBold",
     marginLeft: 10,
+    color: Colors.blue,
   },
 });

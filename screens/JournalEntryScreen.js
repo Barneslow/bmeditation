@@ -1,11 +1,9 @@
 import { useContext, useLayoutEffect } from "react";
-import Animated, { FadeInDown, SlideInDown } from "react-native-reanimated";
-import { Text, StyleSheet, Dimensions, ImageBackground } from "react-native";
+import Animated, { FadeInDown } from "react-native-reanimated";
+import { Text, StyleSheet, ImageBackground } from "react-native";
 import JournalEntryEdit from "../components/JournalEntryEdit";
-import { JournalContext } from "../store/journal-context";
+import { JournalContext } from "../contexts/journal-context";
 import JournalTitleEdit from "../components/JournalTitleEdit";
-
-const { height } = Dimensions.get("screen");
 
 const JournalEntryScreen = ({ navigation, route }) => {
   const journalCtx = useContext(JournalContext);
@@ -13,7 +11,6 @@ const JournalEntryScreen = ({ navigation, route }) => {
   const entry = journalCtx.entries.find(
     (entry) => entry.id === route.params.id
   );
-  const { entries } = route.params;
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -41,7 +38,7 @@ const JournalEntryScreen = ({ navigation, route }) => {
         imageStyle={{ borderRadius: 5 }}
       >
         <JournalTitleEdit data={entry} />
-        <JournalEntryEdit data={entry} routerEntries={entries} />
+        <JournalEntryEdit data={entry} />
       </ImageBackground>
     </Animated.View>
   );

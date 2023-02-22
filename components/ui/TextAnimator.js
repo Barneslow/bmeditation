@@ -7,13 +7,13 @@ import {
   Easing,
   ImageBackground,
 } from "react-native";
-import { FavouritesContext } from "../../store/favourites-context";
+import { FavouritesContext } from "../../contexts/favourites-context";
 import LikeButton from "../buttons/LikeButton";
 import ShareButton from "../buttons/ShareButton";
 
 const { width } = Dimensions.get("screen");
 
-const TextAnimator = ({ quote, finishedAnimation, randomQuote }) => {
+const TextAnimator = ({ quote, randomQuote }) => {
   const { addFavourite } = useContext(FavouritesContext);
 
   const animatedValues = [];
@@ -75,9 +75,7 @@ const TextAnimator = ({ quote, finishedAnimation, randomQuote }) => {
   return (
     <ImageBackground
       style={styles.container}
-      source={{
-        uri: "https://images.unsplash.com/photo-1528458965990-428de4b1cb0d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=729&q=80",
-      }}
+      source={require("../../assets/images/quotebackground.jpg")}
     >
       <View style={styles.textWrapper}>
         {textArr.map((word, index) => (

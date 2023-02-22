@@ -8,7 +8,7 @@ import { Animated, Keyboard } from "react-native";
 import { AuthorNavigator, JournalNavigator } from "./Stacks";
 import { useContext, useEffect } from "react";
 import TabButton from "../buttons/TabButton";
-import { AnimatedContext } from "../../store/animated-context";
+import { AnimatedContext } from "../../contexts/animated-context";
 import { FavouritesNavigator } from "./Drawer";
 
 const Tab = createBottomTabNavigator();

@@ -1,0 +1,15 @@
+export default {
+  waterfall: require("../assets/audio/waterfall.wav"),
+  forest_stream: require("../assets/audio/forest_stream.wav"),
+  beach: require("../assets/audio/beach.wav"),
+  rainforest: require("../assets/audio/rainforest.wav"),
+  arabic: require("../assets/audio/arabic.mp3"),
+  tibet: require("../assets/audio/tibet.mp3"),
+  japan: require("../assets/audio/japan.mp3"),
+  africa: require("../assets/audio/africa.mp3"),
+  thunderstorm: require("../assets/audio/thunderstorm.mp3"),
+  frequency: require("../assets/audio/frequency.mp3"),
+  deep_atonal: require("../assets/audio/deep-atonal.mp3"),
+  three_prayers: require("../assets/audio/3-Prayers-220hz.mp3"),
+  autumn_sky: require("../assets/audio/autumn-sky.mp3"),
+};

@@ -12,7 +12,7 @@ import {
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useContext, useRef } from "react";
-import { JournalContext } from "../store/journal-context";
+import { JournalContext } from "../contexts/journal-context";
 import IconButtonContainer from "./buttons/IconButtonContainer";
 import DisplayDate from "./DisplayDate";
 

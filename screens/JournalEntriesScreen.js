@@ -1,14 +1,12 @@
 import { LinearGradient } from "expo-linear-gradient";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { FlatList, StyleSheet } from "react-native";
 import Animated, { SlideInRight } from "react-native-reanimated";
 import JournalEntryPreview from "../components/JournalEntryPreview";
-import SlideToDeleteItem from "../components/ui/SlideToDeleteItem";
-import { JournalContext } from "../store/journal-context";
+import { JournalContext } from "../contexts/journal-context";
 
 const JournalEntriesScreen = ({ navigation, route }) => {
-  const { removeEntry } = useContext(JournalContext);
-  const entries = route.params;
+  const { entries, removeEntry } = useContext(JournalContext);
 
   return (
     <LinearGradient
@@ -18,21 +16,11 @@ const JournalEntriesScreen = ({ navigation, route }) => {
       <FlatList
         showsVerticalScrollIndicator={false}
         data={entries}
+        contentContainerStyle={{ padding: 10 }}
         keyExtractor={(_, i) => i}
         renderItem={({ item, index }) => (
           <Animated.View entering={SlideInRight.delay(index * 200)}>
-            <SlideToDeleteItem
-              index={index}
-              item={item}
-              handlerFunc={removeEntry}
-              journal
-            >
-              <JournalEntryPreview
-                index={index}
-                item={item}
-                entries={entries}
-              />
-            </SlideToDeleteItem>
+            <JournalEntryPreview index={index} item={item} entries={entries} />
           </Animated.View>
         )}
       />

@@ -2,10 +2,11 @@ import { useIsFocused } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useContext, useEffect, useLayoutEffect } from "react";
 import { StyleSheet, ImageBackground } from "react-native";
+import { Colors } from "../colors/colors";
 import IconButtonContainer from "../components/buttons/IconButtonContainer";
 import InViewFlatListAnimation from "../components/ui/InViewFlatListAnimation";
-import { AnimatedContext } from "../store/animated-context";
-import { FavouritesContext } from "../store/favourites-context";
+import { AnimatedContext } from "../contexts/animated-context";
+import { FavouritesContext } from "../contexts/favourites-context";
 
 const FavouritesScreen = ({ navigation }) => {
   const { seletectedFavourites, selectedFavouritesHandler } =
@@ -26,18 +27,13 @@ const FavouritesScreen = ({ navigation }) => {
             navigation.toggleDrawer();
             animationCtx.animateTab(true);
           }}
-          name="person"
+          name="people-circle"
           style={{
             marginRight: 10,
-            backgroundColor: "rgb(250, 249, 246)",
-            borderRadius: 10,
-            borderWidth: 0.5,
-            elevation: 4,
-            padding: 3,
           }}
           size={36}
           pressedColor={"white"}
-          color={"#ed2938"}
+          color={Colors.red}
         />
       ),
     });
@@ -45,15 +41,15 @@ const FavouritesScreen = ({ navigation }) => {
 
   return (
     <LinearGradient
-      colors={["#f9b7b7", "#fc8d8d", "#f45050", "#ed2938"]}
+      colors={["#F5E3E6", "#FFD9DE"]}
       start={{ x: 0.5, y: 0.1 }}
       end={{ x: 1, y: 1 }}
       style={styles.container}
     >
       <ImageBackground
-        source={{
-          uri: "https://images.unsplash.com/photo-1513689125086-6c432170e843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80",
-        }}
+        // source={{
+        //   uri: "https://images.unsplash.com/photo-1513689125086-6c432170e843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80",
+        // }}
         style={[styles.image]}
         imageStyle={{ opacity: 0.5 }}
       >

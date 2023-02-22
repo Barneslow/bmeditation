@@ -8,10 +8,11 @@ import {
   StatusBar,
   Pressable,
 } from "react-native";
+import { Colors } from "../../colors/colors";
 
 import authorPhotos from "../../data/authors.json";
 
-const _spacing = 20;
+const _spacing = 15;
 const _avatarSize = 70;
 const ITEM_SIZE = _avatarSize + _spacing * 2;
 
@@ -69,9 +70,9 @@ const FadeUpList = ({ data }) => {
                 padding: _spacing / 2,
                 paddingHorizontal: 10,
                 marginBottom: _spacing,
-                backgroundColor: "rgb(242,242,242)",
+                backgroundColor: "white",
                 borderRadius: 12,
-                elevation: 4,
+                elevation: 2,
                 transform: [{ scale }],
                 opacity,
               }}
@@ -83,8 +84,10 @@ const FadeUpList = ({ data }) => {
                 style={{
                   width: _avatarSize,
                   height: _avatarSize,
-                  borderRadius: _avatarSize,
+                  borderRadius: 20,
                   marginRight: _spacing,
+                  borderColor: Colors.offblack,
+                  borderWidth: 0.5,
                 }}
               />
               <View>
@@ -93,6 +96,7 @@ const FadeUpList = ({ data }) => {
                     fontSize: 20,
                     fontFamily: "OpenSansBold",
                     marginVertical: 5,
+                    color: Colors.offblack,
                   }}
                 >
                   {item.name}
@@ -101,7 +105,7 @@ const FadeUpList = ({ data }) => {
                   style={{
                     fontSize: 14,
                     fontFamily: "OpenSansMediumItalic",
-                    opacity: 0.7,
+                    color: Colors.blue,
                   }}
                 >
                   {item.quotes} Quotes

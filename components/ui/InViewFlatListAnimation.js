@@ -5,7 +5,7 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
-import { FavouritesContext } from "../../store/favourites-context";
+import { FavouritesContext } from "../../contexts/favourites-context";
 import Quote from "../Quote";
 import SlideToDeleteItem from "./SlideToDeleteItem";
 

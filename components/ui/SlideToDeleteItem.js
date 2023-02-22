@@ -8,12 +8,9 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
-import { FontAwesome5 } from "@expo/vector-icons";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
-import Quote from "../Quote";
-import JournalEntryPreview from "../JournalEntryPreview";
 
 const { width } = Dimensions.get("window");
 
@@ -25,20 +22,20 @@ const SlideToDeleteItem = ({ item, index, handlerFunc, children }) => {
   const itemHeight = useSharedValue();
   const marginVertical = useSharedValue();
   const backgroundColor = useSharedValue("rgba(250, 249, 246, 1)");
-  const borderColor = useSharedValue("black");
+  // const borderColor = useSharedValue("black");
   const quoteScale = useSharedValue(1);
 
   const panGesture = Gesture.Pan()
-    .activateAfterLongPress(150)
+    .activateAfterLongPress(100)
     .onUpdate((event) => {
       translateX.value = event.translationX;
       backgroundColor.value = "rgb(204,204,204)";
-      borderColor.value = "white";
+      // borderColor.value = "white";
       quoteScale.value = withTiming(1.05);
     })
     .onEnd((event) => {
       backgroundColor.value = "rgba(250, 249, 246, 1)";
-      borderColor.value = "black";
+      // borderColor.value = "black";
       quoteScale.value = withTiming(1);
 
       const dimissed = translateX.value < TRANSLATEX_THRESHOLD;
@@ -87,7 +84,7 @@ const SlideToDeleteItem = ({ item, index, handlerFunc, children }) => {
   const quoteAnimatedStyle = useAnimatedStyle(() => {
     return {
       backgroundColor: backgroundColor.value,
-      borderColor: borderColor.value,
+      // borderColor: borderColor.value,
       transform: [{ scale: quoteScale.value }],
     };
   });
@@ -115,7 +112,7 @@ const SlideToDeleteItem = ({ item, index, handlerFunc, children }) => {
           <Animated.View
             style={[
               quoteAnimatedStyle,
-              { borderRadius: 10, borderWidth: 0.5, overflow: "hidden" },
+              { borderRadius: 10, overflow: "hidden" },
             ]}
           >
             {children}

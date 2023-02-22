@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import ButtonSlider from "../components/ui/ButtonSlider";
 import FadeUpList from "../components/ui/FadeUpList";
-import { QuoteContext } from "../store/quote-context";
+import { QuoteContext } from "../contexts/quote-context";
 import authors from "../data/authors.json";
 import { filterAuthorQuoteTypesArray } from "../helpers/filtering";
 import { useFocusEffect } from "@react-navigation/native";
@@ -63,36 +63,27 @@ const AuthorsScreen = ({ navigation }) => {
       colors={["#fbecd4", "#fae1c3", "#f8d8af", "#e4bc8e", "#f0ab5b"]}
       style={styles.container}
     >
-      <ImageBackground
-        source={{
-          uri: "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      <Animated.View
+        style={{
+          transform: [{ translateY }],
+          overflow: "hidden",
+          backgroundColor: "white",
+          padding: 5,
         }}
-        style={styles.image}
-        imageStyle={{ opacity: 0.15 }}
       >
-        <Animated.View
-          style={{
-            backgroundColor: "rgba(255, 255, 255, .9)",
-            paddingVertical: 2,
-            transform: [{ translateY }],
-            overflow: "hidden",
-            elevation: 1,
-          }}
-        >
-          <ButtonSlider
-            categories={buttonCategories}
-            onPress={categorySelectorHandler}
-          />
-        </Animated.View>
+        <ButtonSlider
+          categories={buttonCategories}
+          onPress={categorySelectorHandler}
+        />
+      </Animated.View>
 
-        <View
-          style={{
-            height: height - 180,
-          }}
-        >
-          <FadeUpList data={authorArray} />
-        </View>
-      </ImageBackground>
+      <View
+        style={{
+          height: height - 180,
+        }}
+      >
+        <FadeUpList data={authorArray} />
+      </View>
     </LinearGradient>
   );
 };

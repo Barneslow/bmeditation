@@ -1,4 +1,5 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { Colors } from "../../colors/colors";
 import FavouritesScreen from "../../screens/FavouritesScreen";
 import DrawerContent from "./DrawerContent";
 
@@ -13,17 +14,13 @@ export const FavouritesNavigator = () => {
         name="Favourites"
         component={FavouritesScreen}
         options={{
-          headerStyle: {
-            backgroundColor: "#ab3745",
-            borderBottomWidth: 0.5,
-          },
           headerLeft: () => null,
 
           headerTintColor: "#0d0c22",
           headerTitleStyle: {
             fontFamily: "SourceSansProBlack",
             fontSize: 24,
-            color: "rgb(250, 249, 246)",
+            color: Colors.red,
           },
         }}
       />
