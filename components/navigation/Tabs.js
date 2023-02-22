@@ -68,9 +68,7 @@ const Tabs = (props) => {
         component={JournalNavigator}
         options={{
           headerShown: false,
-          // tabBarIcon: ({ focused, color, size }) => (
-          //   <TabBarButton focused={focused} name="pencil" />
-          // ),
+
           tabBarButton: (props) => <TabButton {...props} name="pencil" />,
         }}
       />
@@ -80,9 +78,7 @@ const Tabs = (props) => {
         component={AuthorNavigator}
         options={{
           headerShown: false,
-          // tabBarIcon: ({ focused, color, size }) => (
-          //   <TabBarButton focused={focused} name="book" />
-          // ),
+
           tabBarButton: (props) => <TabButton {...props} name="book" />,
         }}
       />
@@ -101,21 +97,14 @@ const Tabs = (props) => {
         options={{
           headerShown: false,
 
-          // tabBarIcon: ({ focused, color, size }) => (
-          //   <TabBarButton focused={focused} name="heart" />
-          // ),
           tabBarButton: (props) => <TabButton {...props} name="heart" />,
         }}
       />
       <Tab.Screen
         name="Meditate"
         component={MeditateScreen}
-        // initialParams={{ animateTab }}
         options={{
           headerShown: false,
-          // tabBarIcon: ({ focused, color, size }) => (
-          //   <TabBarButton focused={focused} name="headset" />
-          // ),
           tabBarButton: (props) => <TabButton {...props} name="headset" />,
         }}
       />

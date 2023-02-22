@@ -7,6 +7,7 @@ import {
   Easing,
   ImageBackground,
 } from "react-native";
+import { Colors } from "../../colors/colors";
 import { FavouritesContext } from "../../contexts/favourites-context";
 import LikeButton from "../buttons/LikeButton";
 import ShareButton from "../buttons/ShareButton";
@@ -157,14 +158,15 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: "OpenSansRegular",
   },
 
   author: {
-    fontSize: 26,
+    fontSize: 22,
     padding: 10,
     fontFamily: "OpenSansSemiBoldItalic",
     textDecorationLine: "underline",
+    color: Colors.offblack,
   },
 });
