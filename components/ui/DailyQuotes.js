@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { Dimensions, Image, StyleSheet, View, Pressable } from "react-native";
+import { Image, StyleSheet, View, Pressable } from "react-native";
 import TextAnimator from "./TextAnimator";
 
 const DailyQuotes = ({ quote, randomQuote, setDailyQuoteVisible }) => {
@@ -20,6 +20,15 @@ const DailyQuotes = ({ quote, randomQuote, setDailyQuoteVisible }) => {
           <Image
             style={styles.icon}
             source={require("../../assets/images/icons/home.png")}
+          />
+        </Pressable>
+        <Pressable
+          style={styles.image}
+          onPress={() => navigation.navigate("AuthorStack")}
+        >
+          <Image
+            style={styles.icon}
+            source={require("../../assets/images/icons/open-book.png")}
           />
         </Pressable>
         <Pressable

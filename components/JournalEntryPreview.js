@@ -25,7 +25,7 @@ const JournalEntryPreview = ({ item }) => {
   return (
     <View style={styles.container}>
       <Modal
-        animationType="fade"
+        animationType="slide"
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {

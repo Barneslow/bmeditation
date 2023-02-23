@@ -11,6 +11,7 @@ import {
 import { Colors } from "../../colors/colors";
 
 import authorPhotos from "../../data/authors.json";
+import { hasImageUri } from "../../helpers/authorImage";
 
 const _spacing = 15;
 const _avatarSize = 70;
@@ -37,6 +38,11 @@ const FadeUpList = ({ data }) => {
         const inputRange = [-1, 0, ITEM_SIZE * index, ITEM_SIZE * (index + 2)];
 
         const author = authorPhotos.find((author) => author.name === item.name);
+
+        const profileImage = require("../../assets/images/icons/unknown-avatar.png");
+        const profileImageUri = { uri: author?.imageUrl };
+
+        const profiler = profileImageUri.uri ? profileImageUri : profileImage;
 
         const opacityInputRange = [
           -1,
@@ -78,16 +84,12 @@ const FadeUpList = ({ data }) => {
               }}
             >
               <Image
-                source={{
-                  uri: author?.imageUrl,
-                }}
+                source={profiler}
                 style={{
                   width: _avatarSize,
                   height: _avatarSize,
                   borderRadius: 20,
                   marginRight: _spacing,
-                  borderColor: Colors.offblack,
-                  borderWidth: 0.5,
                 }}
               />
               <View>

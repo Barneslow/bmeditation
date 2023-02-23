@@ -1,5 +1,118 @@
 [
   {
+    "name": "Zig Ziglar",
+    "type": "political",
+    "imageUrl": "https://tree-portraits-pgp.familysearchcdn.org/86fsg/thumb200s.jpg",
+    "location": "USA",
+    "about": "Hilary Hinton Ziglar was an American author, salesman, and motivational speaker.",
+    "period": 1960
+  },
+  {
+    "name": "Zhuangzi",
+    "type": "eastern",
+    "imageUrl": "https://2.bp.blogspot.com/-Q-zQ3VKFLGE/WnYln-94g8I/AAAAAAAAmrQ/v5QIzhP4EdsOVtXaAKTVVdrmWtVc08Z6ACLcBGAs/s1600/Zhuangzi.jpg",
+    "location": "Ancient China",
+    "about": "Zhuang Zhou, commonly known as Zhuangzi, was an influential Chinese philosopher who lived around the 4th century BCE during the Warring States period, a period of great development in Chinese philosophy, the Hundred Schools of Thought.",
+    "period": "320BC"
+  },
+  {
+    "name": "Zelda Fitzgerald",
+    "type": "author",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/40/Zelda_Fitzgerald_circa_1919_Retouched.jpg",
+    "location": "USA",
+    "about": "Zelda Fitzgerald was an American novelist, painter, playwright, and socialite. Born in Montgomery, Alabama to a wealthy Southern family, she became locally famous for her beauty and high spirits. In 1920, she married writer F. Scott Fitzgerald after the popular success of his debut novel, This Side of Paradise.",
+    "period": 1920
+  },
+  {
+    "name": "Woody Allen",
+    "type": "creative",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/44/Woody_Allen_-_Kup.JPG",
+    "location": "USA",
+    "about": "Heywood Woody Allen is an American filmmaker, actor, and comedian whose career spans more than six decades. Allen has received many accolades, including the most nominations for the Academy Award for Best Original Screenplay, with 16.",
+    "period": 1960
+  },
+  {
+    "name": "Woodrow Wilson",
+    "type": "political",
+    "imageUrl": "https://cdn.britannica.com/89/5189-050-3F9BA8B6/Woodrow-Wilson.jpg",
+    "location": "USA",
+    "about": "Thomas Woodrow Wilson was an American politician and academic who served as the 28th president of the United States from 1913 to 1921. A member of the Democratic Party.",
+    "period": 1890
+  },
+  {
+    "name": "William Wordsworth",
+    "type": "author",
+    "imageUrl": "https://cdn.britannica.com/15/8715-004-490206AE/William-Wordsworth-portrait-Henry-Edridge-Grasmere-England-1804.jpg",
+    "location": "United Kingdom",
+    "about": "William Wordsworth was an English Romantic poet who, with Samuel Taylor Coleridge, helped to launch the Romantic Age in English literature with their joint publication Lyrical Ballads.",
+    "period": 1800
+  },
+  {
+    "name": "Wolfgang Mozart",
+    "type": "creative",
+    "imageUrl": "https://cdn.britannica.com/35/74835-050-F0B71060/canvas-oil-Wolfgang-Amadeus-Mozart-Barbara-Krafft-1819.jpg",
+    "location": "Austria",
+    "about": "Wolfgang Amadeus Mozart, baptised as Joannes Chrysostomus Wolfgangus Theophilus Mozart, was a prolific and influential composer of the Classical period. Despite his short life, his rapid pace of composition resulted in more than 800 works of virtually every genre of his time.",
+    "period": 1770
+  },
+  {
+    "name": "William Styron",
+    "type": "author",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/William_Styron%2C_author%2C_cropped_%282%29.jpg",
+    "location": "USA",
+    "about": "William Clark Styron Jr. was an American novelist and essayist who won major literary awards for his work.",
+    "period": 1980
+  },
+  {
+    "name": "William Strunk Jr.",
+    "type": "author",
+    "imageUrl": "https://rajatnarula.files.wordpress.com/2015/04/william-strunk-jr-6.jpg",
+    "location": "USA",
+    "about": "William Strunk Jr. was an American professor of English at Cornell University and author of The Elements of Style.",
+    "period": 1920
+  },
+  {
+    "name": "William Stafford",
+    "type": "author",
+    "imageUrl": "https://thedewdrop.org/wp-content/uploads/2020/05/William-Stafford.jpg",
+    "location": "USA",
+    "about": "William Edgar Stafford was an American poet and pacifist. He was the father of poet and essayist Kim Stafford. He was appointed the twentieth Consultant in Poetry to the Library of Congress in 1970.",
+    "period": 1960
+  },
+  {
+    "name": "Seneca",
+    "type": "classical",
+    "imageUrl": "https://cdn.britannica.com/33/9433-050-C21D7F4F/marble-bust-Seneca-Staatliche-Museen-Berlin-Germany.jpg",
+    "location": "Spain",
+    "about": "Lucius Annaeus Seneca the Younger, usually known mononymously as Seneca, was a Stoic philosopher of Ancient Rome, a statesman, dramatist, and, in one work, satirist, from the post-Augustan age of Latin literature.",
+    "period": 40
+  },
+  {
+    "name": "Jim Morrison",
+    "type": "creative",
+    "imageUrl": "https://wallpapers.com/images/hd/young-jim-morrison-821cydu4ckz9msv6.jpg",
+    "location": "USA",
+    "about": "James Douglas Morrison was an American singer, poet and songwriter who was the lead vocalist of the rock band the Doors.",
+    "period": 1950
+  },
+  {
+    "name": "Epictetus",
+    "type": "classical",
+    "imageUrl": "https://fourteenlinesblog.files.wordpress.com/2018/09/epiciteus.jpg?w=660",
+    "location": "Ancient Greece",
+    "about": "Epictetus was a Greek Stoic philosopher. He was born into slavery at Hierapolis, Phrygia and lived in Rome until his banishment, when he went to Nicopolis in northwestern Greece for the rest of his life. His teachings were written down and published by his pupil Arrian in his Discourses and Enchiridion.",
+    "period": 100
+  },
+
+  {
+    "name": "A.A Milne",
+    "type": "author",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Milne-Shadowland-1922.jpg",
+    "location": "United Kingdom",
+    "about": "Alan Alexander Milne was an English writer best known for his books about the teddy bear Winnie-the-Pooh, as well as for children's poetry. Milne was primarily a playwright before the huge success of Winnie-the-Pooh overshadowed all his previous work.",
+    "period": 1920
+  },
+  {
     "name": "Oscar Wilde",
     "type": "author",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Oscar_Wilde_portrait_%28cropped%29.jpg/415px-Oscar_Wilde_portrait_%28cropped%29.jpg?20200615111107",
@@ -349,7 +462,7 @@
   {
     "name": "Thomas A. Edison",
     "type": "academic",
-    "imageUrl": "https://www.biography.com/.image/t_share/MTc5OTQ3NDU2NTE4MTY5OTQ0/gettyimages-615312634.jpg",
+    "imageUrl": "https://cdn.britannica.com/47/79847-050-A78604A0/Thomas-Alva-Edison.jpg",
     "location": "USA",
     "about": "Thomas Alva Edison was an American inventor and businessman. He developed many devices in fields such as electric power generation, mass communication, sound recording, and motion pictures.",
     "period": 1900

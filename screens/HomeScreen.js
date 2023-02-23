@@ -1,6 +1,6 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { useCallback, useContext, useEffect, useState } from "react";
-import { ImageBackground, StyleSheet } from "react-native";
+import { Dimensions, ImageBackground, StyleSheet } from "react-native";
 import Animated, { FadeIn } from "react-native-reanimated";
 import { randomFromArray } from "../helpers/math";
 import { QuoteContext } from "../contexts/quote-context";
@@ -11,6 +11,9 @@ import { useIsFocused } from "@react-navigation/native";
 import * as Notifications from "expo-notifications";
 import DailySelections from "../components/DailySelections";
 import DailyQuotes from "../components/ui/DailyQuotes";
+import { deleteFolder } from "../helpers/fileStorage";
+
+deleteFolder("journal");
 
 const HomeScreen = ({ navigation, route }) => {
   const { quotes } = useContext(QuoteContext);
@@ -65,7 +68,7 @@ const HomeScreen = ({ navigation, route }) => {
     <Animated.View entering={FadeIn.duration(600)} style={{ flex: 1 }}>
       <LinearGradient
         colors={["rgba(9, 198, 249, .7)", "rgba(4, 93, 233, .7)"]}
-        style={styles.container}
+        style={styles.wrapper}
       >
         <ImageBackground
           source={{
@@ -92,16 +95,11 @@ const HomeScreen = ({ navigation, route }) => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  container: {
+  wrapper: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
 
   image: {
     flex: 1,
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
   },
 });

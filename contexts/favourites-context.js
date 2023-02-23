@@ -15,6 +15,7 @@ const DUMMY_FAVOR = [
     liked: true,
     topics: ["Life", "Mentoring", "Motivational"],
     id: 316,
+    date: new Date(Date.now()),
   },
 ];
 

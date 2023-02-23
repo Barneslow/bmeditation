@@ -3,7 +3,7 @@ import Animated, { FadeInDown } from "react-native-reanimated";
 
 import { Colors } from "../../colors/colors";
 
-const Selection = ({ children, title, delay, onPress }) => {
+const Selection = ({ children, title, delay, onPress, subtext, amount }) => {
   return (
     <Animated.View
       style={styles.container}
@@ -11,8 +11,19 @@ const Selection = ({ children, title, delay, onPress }) => {
     >
       <Pressable onPress={onPress} style={styles.selection}>
         <View style={styles.textContainer}>
-          <Text style={styles.heading}>Daily {title}</Text>
-          <Text style={styles.span}>Did you learn?</Text>
+          <Text style={styles.heading}>{title}</Text>
+          <Text style={styles.span}>
+            {subtext}
+            <Text
+              style={{
+                color: Colors.red,
+                fontFamily: "SourceSansProBold",
+                fontSize: 20,
+              }}
+            >
+              {amount}
+            </Text>
+          </Text>
         </View>
         {children}
       </Pressable>
@@ -24,9 +35,9 @@ export default Selection;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    padding: 15,
     backgroundColor: "white",
-    width: "80%",
+    width: "85%",
     borderRadius: 20,
     elevation: 1,
     marginVertical: 10,
@@ -43,7 +54,7 @@ const styles = StyleSheet.create({
 
   heading: {
     fontFamily: "SourceSansProBold",
-    fontSize: 20,
+    fontSize: 22,
     color: Colors.offblack,
   },
 
@@ -51,5 +62,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: "OpenSansMediumItalic",
     color: "darkslategrey",
+  },
+
+  amount: {
+    color: Colors.red,
+    fontFamily: "SourceSansProBold",
   },
 });

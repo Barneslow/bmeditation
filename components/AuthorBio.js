@@ -2,10 +2,15 @@ import { Image } from "react-native";
 import AuthorInfo from "./AuthorInfo";
 
 const AuthorBio = ({ author }) => {
+  const profileImage = require("../assets/images/icons/unknown-avatar.png");
+  const profileImageUri = { uri: author?.imageUrl };
+
+  const profiler = profileImageUri.uri ? profileImageUri : profileImage;
+
   return (
     <>
       <Image
-        source={{ uri: author.imageUrl }}
+        source={profiler}
         style={{
           height: 300,
           justifyContent: "flex-end",

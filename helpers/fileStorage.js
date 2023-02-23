@@ -46,3 +46,18 @@ export async function readStorageFile(path) {
     console.error(error);
   }
 }
+
+export async function deleteFolder(folder) {
+  const folderPath = RNFS.DocumentDirectoryPath + `/${folder}`;
+
+  try {
+    const folderExists = await RNFS.exists(folderPath);
+
+    if (folderExists) await RNFS.unlink(folderPath);
+    console.log("Folder deleted successfully.");
+
+    return;
+  } catch (error) {
+    console.error(error);
+  }
+}
