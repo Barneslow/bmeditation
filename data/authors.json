@@ -1,5 +1,13 @@
 [
   {
+    "name": "Carl Jung",
+    "type": "academic",
+    "imageUrl": "https://tree-portraits-pgp.familysearchcdn.org/86fsg/thumb200s.jpg",
+    "location": "Switzerland",
+    "about": "Carl Gustav Jung was a Swiss psychiatrist and psychoanalyst who founded analytical psychology. Jung's work has been influential in the fields of psychiatry, anthropology, archaeology, literature, philosophy, psychology, and religious studies.",
+    "period": 1940
+  },
+  {
     "name": "Zig Ziglar",
     "type": "political",
     "imageUrl": "https://tree-portraits-pgp.familysearchcdn.org/86fsg/thumb200s.jpg",

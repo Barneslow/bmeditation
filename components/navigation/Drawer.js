@@ -15,7 +15,6 @@ export const FavouritesNavigator = () => {
         component={FavouritesScreen}
         options={{
           headerLeft: () => null,
-
           headerTintColor: "#0d0c22",
           headerTitleStyle: {
             fontFamily: "SourceSansProBlack",

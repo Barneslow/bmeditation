@@ -14,8 +14,8 @@ const DUMMY_FAVOR = [
     profession: "Englist Author",
     liked: true,
     topics: ["Life", "Mentoring", "Motivational"],
-    id: 316,
-    date: new Date(Date.now()),
+    id: Math.random(),
+    date: new Date(Date.now() - 86400000),
   },
 ];
 
@@ -29,7 +29,6 @@ export const FavouritesContext = createContext({
 });
 
 const FavouritesContextProvider = ({ children }) => {
-  const [initalLoad, setInitalLoad] = useState(false);
   const [favourites, setFavourites] = useState([]);
   const [seletectedFavourites, setSeletectedFavourites] = useState([]);
 
@@ -40,7 +39,7 @@ const FavouritesContextProvider = ({ children }) => {
       const exists = await folderExists("favourites");
 
       if (!exists) {
-        await createFolderAndWriteFile("favourites", DUMMY_FAVOR);
+        await createFolderAndWriteFile("favourites", []);
       }
 
       const data = await readStorageFile("favourites");
@@ -49,10 +48,7 @@ const FavouritesContextProvider = ({ children }) => {
         entry.date = new Date(entry.date);
         addInitialFavourites(entry);
       });
-
-      setInitalLoad(false);
     }
-    setInitalLoad(false);
 
     getFavouritesFromDisk();
   }, []);
@@ -68,7 +64,9 @@ const FavouritesContextProvider = ({ children }) => {
     ]);
   }
 
-  async function addFavourite(favourite) {
+  async function addFavourite(favQuote) {
+    const favourite = { ...favQuote, date: new Date(Date.now()) };
+
     if (favourite.liked) {
       removeFavourite(favourite);
     }

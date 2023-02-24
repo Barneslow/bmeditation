@@ -2,6 +2,7 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import Animated, { FadeInDown } from "react-native-reanimated";
 
 import { Colors } from "../../colors/colors";
+import ItemContainer from "../ui/ItemContainer";
 
 const Selection = ({ children, title, delay, onPress, subtext, amount }) => {
   return (
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
     width: "85%",
     borderRadius: 20,
     elevation: 1,
-    marginVertical: 10,
+    marginVertical: 5,
     elevation: 4,
   },
 

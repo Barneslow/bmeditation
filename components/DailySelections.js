@@ -1,12 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import { useContext } from "react";
-import { Image, StatusBar, StyleSheet, View } from "react-native";
+import { Image, StatusBar, StyleSheet, Text, View } from "react-native";
 import { FavouritesContext } from "../contexts/favourites-context";
 import { JournalContext } from "../contexts/journal-context";
 import { getTodaysData } from "../helpers/todaysData";
 import Selection from "./buttons/Selection";
 
-const DailySelections = ({ setDailyQuoteVisible }) => {
+const DailySelections = ({ setAlternate, setAlternateContent }) => {
   const journalCtx = useContext(JournalContext);
   const favouritesCtx = useContext(FavouritesContext);
   const navigation = useNavigation();
@@ -19,10 +19,16 @@ const DailySelections = ({ setDailyQuoteVisible }) => {
 
   return (
     <View style={styles.container}>
+      <View>
+        <Text>B Meditation</Text>
+      </View>
       <Selection
         title={"Quotes"}
         subtext="Explore Inspiring Quotes"
-        onPress={() => setDailyQuoteVisible(true)}
+        onPress={() => {
+          setAlternateContent("quotes");
+          setAlternate(true);
+        }}
       >
         <Image
           style={styles.icon}
@@ -32,7 +38,10 @@ const DailySelections = ({ setDailyQuoteVisible }) => {
       <Selection
         title={"Authors"}
         subtext="Todays favourites: "
-        onPress={() => navigation.navigate("AuthorStack")}
+        onPress={() => {
+          setAlternateContent("author");
+          setAlternate(true);
+        }}
         amount={todaysFavourites.length}
       >
         <Image

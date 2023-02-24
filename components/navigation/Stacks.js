@@ -25,6 +25,15 @@ export const AuthorNavigator = () => {
         options={{
           gestureDirection: "horizontal",
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+
+          headerStyle: {
+            backgroundColor: "rgb(251,237,223)",
+          },
+          headerTitleStyle: {
+            fontFamily: "SourceSansProBlack",
+            fontSize: 24,
+          },
+
           // headerBackground: () => (
           //   <LinearGradient
           //     colors={["#F5E3E6", "#D9E4F5"]}
@@ -33,7 +42,6 @@ export const AuthorNavigator = () => {
           //     end={{ x: 1, y: 0 }}
           //   />
           // ),
-          headerShown: false,
         }}
       />
     </AuthorStack.Navigator>

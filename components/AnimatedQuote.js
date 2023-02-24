@@ -50,9 +50,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     overflow: "hidden",
-    backgroundColor: "#f9f1f1",
-    // borderColor: Colors.blue,
-    // borderWidth: 0.5,
+    backgroundColor: "white",
     elevation: 1,
   },
 });

@@ -1,4 +1,5 @@
 import { countQuotes } from "./math";
+import authorData from "../data/authors.json";
 
 export function filterAuthorQuoteTypesArray(array, quotes, selectedAuthors) {
   if (selectedAuthors === "all") return countQuotes(quotes);
@@ -14,4 +15,11 @@ export function filterAuthorQuoteTypesArray(array, quotes, selectedAuthors) {
   const authorArray = countQuotes(filteredQuotes);
 
   return authorArray;
+}
+
+export function filterAuthorTypes(array, selectedAuthors) {
+  if (selectedAuthors === "all") return authorData;
+  const authorTypes = array.filter((author) => author.type === selectedAuthors);
+
+  return authorTypes;
 }

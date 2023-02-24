@@ -4,7 +4,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../../colors/colors";
 
 const TabButton = (props) => {
-  const { name, onPress, accessibilityState, animate } = props;
+  const { name, onPress, accessibilityState, animate, data } = props;
   const focused = accessibilityState.selected;
   const translateY = useRef(new Animated.Value(0)).current;
 

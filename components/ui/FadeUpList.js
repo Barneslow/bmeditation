@@ -11,7 +11,6 @@ import {
 import { Colors } from "../../colors/colors";
 
 import authorPhotos from "../../data/authors.json";
-import { hasImageUri } from "../../helpers/authorImage";
 
 const _spacing = 15;
 const _avatarSize = 70;

@@ -74,67 +74,72 @@ const TextAnimator = ({ quote, randomQuote }) => {
   }, [quote]);
 
   return (
-    <ImageBackground
-      style={styles.container}
-      source={require("../../assets/images/quotebackground.jpg")}
-    >
-      <View style={styles.textWrapper}>
-        {textArr.map((word, index) => (
+    <View style={styles.container}>
+      <ImageBackground
+        style={styles.image}
+        source={require("../../assets/images/quotebackground.jpg")}
+        imageStyle={{ opacity: 0.7 }}
+      >
+        <View style={styles.textWrapper}>
+          {textArr.map((word, index) => (
+            <Animated.Text
+              key={`${word}-${index}`}
+              style={[
+                styles.text,
+                {
+                  opacity: animatedValues[index],
+                  transform: [
+                    {
+                      translateY: Animated.multiply(
+                        animatedValues[index],
+                        new Animated.Value(-5)
+                      ),
+                    },
+                  ],
+                },
+              ]}
+            >
+              {word}
+              {`${index < textArr.length ? " " : ""}`}
+            </Animated.Text>
+          ))}
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
           <Animated.Text
-            key={`${word}-${index}`}
             style={[
-              styles.text,
+              styles.author,
               {
-                opacity: animatedValues[index],
-                transform: [
-                  {
-                    translateY: Animated.multiply(
-                      animatedValues[index],
-                      new Animated.Value(-5)
-                    ),
-                  },
-                ],
+                opacity: authorOpacity,
+                transform: [{ translateX: authorSwipe }],
               },
             ]}
           >
-            {word}
-            {`${index < textArr.length ? " " : ""}`}
+            {quote.author}
           </Animated.Text>
-        ))}
-      </View>
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <Animated.Text
-          style={[
-            styles.author,
-            {
-              opacity: authorOpacity,
-              transform: [{ translateX: authorSwipe }],
-            },
-          ]}
-        >
-          {quote.author}
-        </Animated.Text>
-        <Animated.View style={{ flexDirection: "row", transform: [{ scale }] }}>
-          <View style={{ marginRight: 10 }}>
-            <ShareButton quoteData={quote} />
-          </View>
-          <LikeButton
-            color={"rgba(37,122,253, 1)"}
-            onPress={() => {
-              addFavourite(quote);
-              randomQuote();
-            }}
-            liked={quote.liked}
-          />
-        </Animated.View>
-      </View>
-    </ImageBackground>
+          <Animated.View
+            style={{ flexDirection: "row", transform: [{ scale }] }}
+          >
+            <View style={{ marginRight: 10 }}>
+              <ShareButton quoteData={quote} />
+            </View>
+            <LikeButton
+              color={"rgba(37,122,253, 1)"}
+              onPress={() => {
+                addFavourite(quote);
+                randomQuote();
+              }}
+              liked={quote.liked}
+            />
+          </Animated.View>
+        </View>
+      </ImageBackground>
+    </View>
   );
 };
 
@@ -142,12 +147,15 @@ export default TextAnimator;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "lightgrey",
-    padding: 10,
     borderRadius: 12,
     margin: 20,
     overflow: "hidden",
     maxWidth: "90%",
+    backgroundColor: "white",
+  },
+
+  image: {
+    padding: 10,
   },
 
   textWrapper: {

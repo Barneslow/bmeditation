@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Modal,
   Dimensions,
+  Pressable,
 } from "react-native";
 import { Colors } from "../colors/colors";
 import { JournalContext } from "../contexts/journal-context";
@@ -23,7 +24,7 @@ const JournalEntryPreview = ({ item }) => {
   const { title, date, text, id } = item;
 
   return (
-    <View style={styles.container}>
+    <Pressable style={styles.container}>
       <Modal
         animationType="slide"
         transparent={true}
@@ -97,6 +98,7 @@ const JournalEntryPreview = ({ item }) => {
               fontWeight: "500",
               lineHeight: 20,
               flex: 1,
+              alignSelf: "flex-start",
             }}
           >
             {truncateText(text, 150)}
@@ -126,7 +128,7 @@ const JournalEntryPreview = ({ item }) => {
           </View>
         </View>
       </ImageBackground>
-    </View>
+    </Pressable>
   );
 };
 

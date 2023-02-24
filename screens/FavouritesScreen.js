@@ -47,9 +47,9 @@ const FavouritesScreen = ({ navigation }) => {
       style={styles.container}
     >
       <ImageBackground
-        // source={{
-        //   uri: "https://images.unsplash.com/photo-1513689125086-6c432170e843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80",
-        // }}
+        source={{
+          uri: "https://images.unsplash.com/photo-1513689125086-6c432170e843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80",
+        }}
         style={[styles.image]}
         imageStyle={{ opacity: 0.5 }}
       >

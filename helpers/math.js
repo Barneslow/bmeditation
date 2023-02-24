@@ -4,6 +4,18 @@ export function randomFromArray(array) {
   return item;
 }
 
+export function randomThreeFromArray(array) {
+  const spliceArr = [...array];
+  let randomItems = [];
+
+  for (let i = 0; i < 3; i++) {
+    let randomIndex = Math.floor(Math.random() * spliceArr.length);
+    randomItems.push(spliceArr.splice(randomIndex, 1)[0]);
+  }
+
+  return randomItems;
+}
+
 export function countQuotes(array) {
   const counts = {};
 
