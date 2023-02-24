@@ -31,7 +31,7 @@ const JournalContextProvider = ({ children }) => {
       const exists = await folderExists("journal");
 
       if (!exists) {
-        await createFolderAndWriteFile("journal", []);
+        await createFolderAndWriteFile("journal", DUMMY_ENTRIES);
       }
 
       const data = await readStorageFile("journal");

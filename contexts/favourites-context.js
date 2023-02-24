@@ -39,7 +39,7 @@ const FavouritesContextProvider = ({ children }) => {
       const exists = await folderExists("favourites");
 
       if (!exists) {
-        await createFolderAndWriteFile("favourites", []);
+        await createFolderAndWriteFile("favourites", [DUMMY_FAVOR]);
       }
 
       const data = await readStorageFile("favourites");
