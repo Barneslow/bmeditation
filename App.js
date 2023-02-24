@@ -59,6 +59,7 @@ export default function App() {
     OpenSansSemiBoldItalic: require("./assets/fonts/OpenSans/OpenSans-SemiBoldItalic.ttf"),
     SourceSansProBold: require("./assets/fonts/OpenSans/SourceSansPro-Bold.ttf"),
     SourceSansProBlack: require("./assets/fonts/OpenSans/SourceSansPro-Black.ttf"),
+    Logo: require("./assets/fonts/SpecialElite-Regular.ttf"),
   });
 
   if (!fontsLoaded) {

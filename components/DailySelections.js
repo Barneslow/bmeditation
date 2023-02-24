@@ -20,7 +20,18 @@ const DailySelections = ({ setAlternate, setAlternateContent }) => {
   return (
     <View style={styles.container}>
       <View>
-        <Text>B Meditation</Text>
+        <Text
+          style={{
+            fontFamily: "Logo",
+            color: "orange",
+            fontSize: 40,
+            textShadowColor: "rgba(0, 0, 0, 0.75)",
+            textShadowOffset: { width: -1, height: 1 },
+            textShadowRadius: 10,
+          }}
+        >
+          B Meditation
+        </Text>
       </View>
       <Selection
         title={"Quotes"}

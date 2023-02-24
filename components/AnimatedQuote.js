@@ -30,11 +30,11 @@ const ActionableQuote = ({ quoteData }) => {
         }}
       >
         <View style={{ marginRight: 10 }}>
-          <ShareButton size={22} quoteData={quoteData} />
+          <ShareButton size={24} quoteData={quoteData} />
         </View>
         <LikeButton
           liked={isFavourited}
-          size={22}
+          size={24}
           color={Colors.blue}
           onPress={favouritesHandler}
         />

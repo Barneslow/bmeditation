@@ -27,7 +27,7 @@ export const AuthorNavigator = () => {
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
 
           headerStyle: {
-            backgroundColor: "rgb(251,237,223)",
+            backgroundColor: "#F5E3E6",
           },
           headerTitleStyle: {
             fontFamily: "SourceSansProBlack",

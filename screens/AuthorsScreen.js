@@ -59,7 +59,7 @@ const AuthorsScreen = ({ navigation }) => {
   );
 
   return (
-    <LinearGradient colors={["#fbecd4", "#d4cbb9"]} style={styles.container}>
+    <LinearGradient colors={["#F5E3E6", "#D9E4F5"]} style={styles.container}>
       <Animated.View
         style={{
           transform: [{ translateY }],
