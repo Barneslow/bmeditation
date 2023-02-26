@@ -1,10 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import {
-  Button,
+  Dimensions,
   FlatList,
   StatusBar,
   StyleSheet,
-  Text,
   View,
 } from "react-native";
 import { randomThreeFromArray } from "../helpers/math";
@@ -13,10 +12,11 @@ import ButtonSlider from "./ui/ButtonSlider";
 
 import authorData from "../data/authors.json";
 import { filterAuthorTypes } from "../helpers/filtering";
-import { Colors } from "../colors/colors";
 import NavigationIcons from "./buttons/navigationIcons";
 import TabButton from "./buttons/TabButton";
 import { useNavigation } from "@react-navigation/native";
+
+const { height } = Dimensions.get("screen");
 
 const AuthorRecommendations = ({ setAlternate, setAlternateContent }) => {
   const navigation = useNavigation();
@@ -51,6 +51,10 @@ const AuthorRecommendations = ({ setAlternate, setAlternateContent }) => {
     }, [filteredAuthors])
   );
 
+  useEffect(() => {
+    randomAuthor();
+  }, [selectedAuthors]);
+
   return (
     <View style={styles.container}>
       <NavigationIcons
@@ -68,13 +72,6 @@ const AuthorRecommendations = ({ setAlternate, setAlternateContent }) => {
         <FlatList
           showsVerticalScrollIndicator={true}
           data={randomAuthors}
-          contentContainerStyle={{
-            paddingHorizontal: 10,
-            alignItems: "center",
-            width: "100%",
-            height: "100%",
-            flex: 1,
-          }}
           keyExtractor={(_, i) => i}
           renderItem={({ item, index }) => {
             return (
@@ -94,13 +91,12 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     marginTop: StatusBar.currentHeight,
-    justifyContent: "center",
     alignItems: "center",
   },
 
   recommendations: {
     display: "flex",
-    alignItems: "center",
-    flex: 1,
+    padding: 10,
+    height: height - 200,
   },
 });

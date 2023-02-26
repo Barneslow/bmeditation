@@ -1,25 +1,20 @@
 import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import Animated, { FadeInRight, FadeOutLeft } from "react-native-reanimated";
+import Animated, { FadeInRight } from "react-native-reanimated";
+import { toTitleCase } from "../helpers/text";
 
 const AuthorPreview = ({ author, delay }) => {
   const navigation = useNavigation();
-  const [tapCount, setTapCount] = useState(0);
 
   const item = { name: author.name };
 
   return (
     <Animated.View
       entering={FadeInRight.duration(500).delay(delay)}
-      style={[
-        styles.author,
-        { backgroundColor: tapCount === 1 ? "lightgrey" : "white" },
-      ]}
-      exiting={FadeOutLeft}
+      style={styles.author}
     >
       <Pressable
-        onLongPress={() =>
+        onPress={() =>
           navigation.navigate("AuthorStack", {
             screen: "AuthorQuotes",
             params: { item, author },
@@ -28,10 +23,12 @@ const AuthorPreview = ({ author, delay }) => {
       >
         <View style={styles.heading}>
           <Image source={{ uri: author?.imageUrl }} style={styles.logo} />
-          <Text>{author?.name}</Text>
-          <Text>{author?.type}</Text>
+          <Text style={{ fontSize: 20, fontFamily: "SourceSansProBold" }}>
+            {author?.name}
+          </Text>
+          <Text style={styles.text}>{toTitleCase(author?.type)}</Text>
         </View>
-        <Text>{author?.about}</Text>
+        <Text style={styles.text}>{author?.about}</Text>
       </Pressable>
     </Animated.View>
   );
@@ -47,6 +44,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     elevation: 4,
     minWidth: "100%",
+    backgroundColor: "white",
   },
 
   logo: {
@@ -60,7 +58,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    marginBottom: 5,
   },
 
-  description: {},
+  text: {
+    fontFamily: "OpenSansMedium",
+  },
 });

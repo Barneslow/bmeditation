@@ -14,8 +14,6 @@ import { deleteFolder } from "../helpers/fileStorage";
 
 import AuthorRecommendations from "../components/AuthorRecommendations";
 
-// deleteFolder("favourites");
-
 const HomeScreen = ({ navigation, route }) => {
   const { quotes } = useContext(QuoteContext);
   const [quote, setQuote] = useState(randomFromArray(quotes));

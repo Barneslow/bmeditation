@@ -11,10 +11,9 @@ const DUMMY_FAVOR = [
   {
     quote: "I will not walk backward in life.",
     author: "J.R.R Tolkien",
-    profession: "Englist Author",
-    liked: true,
-    topics: ["Life", "Mentoring", "Motivational"],
-    id: Math.random(),
+    tags: ["life", "mentoring", "motivational"],
+    id: 316,
+    liked: false,
     date: new Date(Date.now() - 86400000),
   },
 ];
@@ -39,7 +38,7 @@ const FavouritesContextProvider = ({ children }) => {
       const exists = await folderExists("favourites");
 
       if (!exists) {
-        await createFolderAndWriteFile("favourites", [DUMMY_FAVOR]);
+        await createFolderAndWriteFile("favourites", DUMMY_FAVOR);
       }
 
       const data = await readStorageFile("favourites");

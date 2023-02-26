@@ -29,12 +29,12 @@ const AuthorQuotesScreen = ({ navigation, route }) => {
         />
       ),
     });
-  }, []);
+  }, [author.name]);
 
   useEffect(() => {
     const filteredQuotes = quotes.filter((quote) => quote.author === item.name);
     setAuthorQuotes(filteredQuotes);
-  }, [quotes]);
+  }, [quotes, author, item.name]);
 
   return (
     <LinearGradient colors={["#F5E3E6", "#D9E4F5"]} style={styles.container}>
