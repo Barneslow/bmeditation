@@ -1,16 +1,14 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { useCallback, useContext, useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { ImageBackground, StyleSheet } from "react-native";
 import Animated, { FadeIn } from "react-native-reanimated";
-import { randomFromArray, randomThreeFromArray } from "../helpers/math";
+import { randomFromArray } from "../helpers/math";
 import { QuoteContext } from "../contexts/quote-context";
 import TabButton from "../components/buttons/TabButton";
 import natureUrls from "../data/natureImageUrl.json";
 import { useIsFocused } from "@react-navigation/native";
-import * as Notifications from "expo-notifications";
 import DailySelections from "../components/DailySelections";
 import DailyQuotes from "../components/ui/DailyQuotes";
-import { deleteFolder } from "../helpers/fileStorage";
 
 import AuthorRecommendations from "../components/AuthorRecommendations";
 
@@ -63,49 +61,37 @@ const HomeScreen = ({ navigation, route }) => {
     }
   }
 
-  // async function scheduleNotificationHandler() {
-  //   Notifications.scheduleNotificationAsync({
-  //     content: { title: "daily quote", body: "time to work", data: quote },
-  //     trigger: {
-  //       // hour:,
-  //       // minute: ,
-  //       seconds: 2,
-  //       // repeats: true,
-  //     },
-  //   });
-  // }
-
   return (
     <Animated.View entering={FadeIn.duration(600)} style={{ flex: 1 }}>
       <LinearGradient colors={["#AECAD6", "#96C8FB"]} style={styles.wrapper}>
-        {/* <ImageBackground
+        <ImageBackground
           source={{
             uri: imageUri,
           }}
           style={styles.image}
           imageStyle={{ opacity: 0.5 }}
-        > */}
-        {alternate ? (
-          option === "quotes" ? (
-            <DailyQuotes
-              quote={quote}
-              randomQuote={randomQuote}
-              setAlternate={setAlternate}
-              setAlternateContent={setAlternateContent}
-            />
+        >
+          {alternate ? (
+            option === "quotes" ? (
+              <DailyQuotes
+                quote={quote}
+                randomQuote={randomQuote}
+                setAlternate={setAlternate}
+                setAlternateContent={setAlternateContent}
+              />
+            ) : (
+              <AuthorRecommendations
+                setAlternate={setAlternate}
+                setAlternateContent={setAlternateContent}
+              />
+            )
           ) : (
-            <AuthorRecommendations
+            <DailySelections
               setAlternate={setAlternate}
               setAlternateContent={setAlternateContent}
             />
-          )
-        ) : (
-          <DailySelections
-            setAlternate={setAlternate}
-            setAlternateContent={setAlternateContent}
-          />
-        )}
-        {/* </ImageBackground> */}
+          )}
+        </ImageBackground>
       </LinearGradient>
     </Animated.View>
   );
@@ -122,5 +108,6 @@ const styles = StyleSheet.create({
 
   image: {
     flex: 1,
+    width: "100%",
   },
 });

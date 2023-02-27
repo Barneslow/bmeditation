@@ -6,14 +6,13 @@ import { MotiPressable } from "moti/interactions";
 import { toTitleCase } from "../helpers/text";
 import { useEffect, useRef, useState } from "react";
 import AudioImages from "../data/audioImages.json";
-import Countdown from "./CountDown";
+import { CountUp } from "./TimerCounter";
 
 const AudioAnimation = ({
   playingAnimation,
   animationState,
   animate,
   selectedAudio,
-  soundDuration,
 }) => {
   const opacityScale = useRef(new Animated.Value(0)).current;
   const [visible, setVisible] = useState();
@@ -44,7 +43,7 @@ const AudioAnimation = ({
             source={{
               uri: imageUri,
             }}
-            style={{ flex: 1, opacity: 0.3 }}
+            style={{ flex: 1, opacity: 0.7 }}
           />
         </Animated.View>
       )}
@@ -91,7 +90,7 @@ const AudioAnimation = ({
           {toTitleCase(selectedAudio.replace("_", " "))}
         </Text>
       )}
-      {playingAnimation && <Countdown time={soundDuration} />}
+      {playingAnimation && <CountUp />}
     </View>
   );
 };

@@ -16,11 +16,15 @@ const DailyQuotes = ({
         marginTop: StatusBar.currentHeight,
       }}
     >
-      <NavigationIcons
-        setAlternate={setAlternate}
-        setAlternateContent={setAlternateContent}
-        content={"quotes"}
-      />
+      <View
+        style={{ display: "flex", backgroundColor: "rgba(249,249,249, .5)" }}
+      >
+        <NavigationIcons
+          setAlternate={setAlternate}
+          setAlternateContent={setAlternateContent}
+          content={"quotes"}
+        />
+      </View>
       <View style={{ flex: 1, justifyContent: "center" }}>
         {quote && <TextAnimator quote={quote} randomQuote={randomQuote} />}
       </View>

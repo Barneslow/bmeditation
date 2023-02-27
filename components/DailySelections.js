@@ -1,18 +1,22 @@
 import { useNavigation } from "@react-navigation/native";
 import { useContext } from "react";
 import { Image, StatusBar, StyleSheet, Text, View } from "react-native";
+import { MeditationContext } from "../contexts/audio-context";
 import { FavouritesContext } from "../contexts/favourites-context";
 import { JournalContext } from "../contexts/journal-context";
+import { msToTime } from "../helpers/time";
 import { getTodaysData } from "../helpers/todaysData";
 import Selection from "./buttons/Selection";
 
 const DailySelections = ({ setAlternate, setAlternateContent }) => {
   const journalCtx = useContext(JournalContext);
   const favouritesCtx = useContext(FavouritesContext);
+  const meditationCtx = useContext(MeditationContext);
   const navigation = useNavigation();
 
   const { entries } = journalCtx;
   const { favourites } = favouritesCtx;
+  const { dailyTime } = meditationCtx;
 
   const todaysEntries = getTodaysData(entries);
   const todaysFavourites = getTodaysData(favourites);
@@ -47,6 +51,7 @@ const DailySelections = ({ setAlternate, setAlternateContent }) => {
         />
       </Selection>
       <Selection
+        delay={100}
         title={"Authors"}
         subtext="Todays favourites: "
         onPress={() => {
@@ -62,7 +67,7 @@ const DailySelections = ({ setAlternate, setAlternateContent }) => {
       </Selection>
       <Selection
         title={"Journal"}
-        delay={300}
+        delay={200}
         onPress={() => navigation.navigate("JournalStack")}
         subtext={`Todays Entries:  `}
         amount={todaysEntries.length}
@@ -74,9 +79,10 @@ const DailySelections = ({ setAlternate, setAlternateContent }) => {
       </Selection>
       <Selection
         title={"Meditation"}
-        delay={600}
+        delay={300}
         onPress={() => navigation.navigate("Meditate")}
-        subtext="Take a breath"
+        subtext="Mindful Minutes: "
+        amount={msToTime(dailyTime * 1000)}
       >
         <Image
           style={styles.icon}

@@ -7,7 +7,7 @@ const Selection = ({ children, title, delay, onPress, subtext, amount }) => {
   return (
     <Animated.View
       style={styles.container}
-      entering={FadeInDown.duration(1000).delay(delay)}
+      entering={FadeInDown.duration(500).delay(delay)}
     >
       <Pressable onPress={onPress} style={styles.selection}>
         <View style={styles.textContainer}>

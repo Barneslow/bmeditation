@@ -65,9 +65,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     width: "100%",
     padding: 5,
-    borderBottomRightRadius: 10,
-    borderBottomLeftRadius: 10,
-    backgroundColor: "rgba(0, 0, 0, .2)",
   },
 
   image: {

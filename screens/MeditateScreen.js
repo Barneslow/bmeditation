@@ -1,30 +1,22 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { useContext, useEffect, useState } from "react";
-import {
-  ImageBackground,
-  StyleSheet,
-  StatusBar,
-  Image,
-  Dimensions,
-} from "react-native";
+import { StyleSheet } from "react-native";
 import AudioAnimation from "../components/AudioAnimation";
 import DropdownMenu from "../components/ui/DropdownMenu";
 import { Audio } from "expo-av";
-import LocalAudio from "../contexts/audio-context";
-import { useAnimationState, View } from "moti";
+import LocalAudio, { MeditationContext } from "../contexts/audio-context";
+import { useAnimationState } from "moti";
 import { AnimatedContext } from "../contexts/animated-context";
 import { useIsFocused } from "@react-navigation/native";
 
-const { width, height } = Dimensions.get("screen");
-
-const MeditateScreen = ({ navigation, route }) => {
+const MeditateScreen = () => {
   const isFocused = useIsFocused();
   const animateCtx = useContext(AnimatedContext);
   const { animateTab } = animateCtx;
   const [selectedAudio, setSelectedAudio] = useState("waterfall");
   const [playingSound, setPlayingSound] = useState();
-  const [soundDuration, setSoundDuration] = useState(121988);
   const [playingAnimation, setPlayingAnimation] = useState(false);
+  const audioCtx = useContext(MeditationContext);
 
   const setInitialTrack = async () => {
     try {
@@ -46,7 +38,7 @@ const MeditateScreen = ({ navigation, route }) => {
     try {
       const { sound } = await Audio.Sound.createAsync(LocalAudio[autioString]);
       const status = await sound.getStatusAsync();
-      setSoundDuration(status.durationMillis);
+      // setSoundDuration(status.durationMillis);
       setPlayingSound(sound);
     } catch (error) {
       console.log(error);
@@ -60,9 +52,10 @@ const MeditateScreen = ({ navigation, route }) => {
     }
   }, [isFocused]);
 
-  async function playAudioHandler(playAudio, selectedAudio) {
+  async function playAudioHandler(playAudio) {
     if (playAudio) {
       try {
+        await playingSound.setIsLoopingAsync(true);
         await playingSound.playAsync();
         return;
       } catch (error) {
@@ -87,6 +80,8 @@ const MeditateScreen = ({ navigation, route }) => {
       opacity: 0,
     },
   });
+
+  useEffect(() => {}, [playingAnimation]);
 
   function animate() {
     if (playingAnimation) {
@@ -114,7 +109,6 @@ const MeditateScreen = ({ navigation, route }) => {
         animationState={animationState}
         animate={animate}
         selectedAudio={selectedAudio}
-        soundDuration={soundDuration}
       />
     </LinearGradient>
   );

@@ -57,16 +57,23 @@ const AuthorRecommendations = ({ setAlternate, setAlternateContent }) => {
 
   return (
     <View style={styles.container}>
-      <NavigationIcons
-        setAlternate={setAlternate}
-        setAlternateContent={setAlternateContent}
-        content={"author"}
-      />
-
-      <ButtonSlider
-        categories={buttonCategories}
-        onPress={categorySelectorHandler}
-      />
+      <View
+        style={{
+          display: "flex",
+          backgroundColor: "rgba(249,249,249, .5)",
+          paddingVertical: 2,
+        }}
+      >
+        <NavigationIcons
+          setAlternate={setAlternate}
+          setAlternateContent={setAlternateContent}
+          content={"author"}
+        />
+        <ButtonSlider
+          categories={buttonCategories}
+          onPress={categorySelectorHandler}
+        />
+      </View>
 
       <View style={styles.recommendations}>
         <FlatList
