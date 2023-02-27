@@ -15,8 +15,6 @@ const FavouritesScreen = ({ navigation }) => {
 
   const isFocused = useIsFocused();
 
-  console.log(seletectedFavourites);
-
   useEffect(() => {
     isFocused && selectedFavouritesHandler("All");
   }, [isFocused]);

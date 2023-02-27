@@ -7,33 +7,11 @@ import IconNumberOverlayButton from "../components/buttons/IconNumberOverlayButt
 
 import { JournalContext } from "../contexts/journal-context";
 
-// import RNFS from "react-native-fs";
-
-// RNFS.unlink(RNFS.DocumentDirectoryPath + "/favourites")
-//   .then(() => console.log("folder deleted"))
-//   .catch((err) => console.log(err));
-
-// RNFS.unlink(RNFS.DocumentDirectoryPath + "/journal")
-//   .then(() => console.log("folder deleted"))
-//   .catch((err) => console.log(err));
-
-// RNFS.readDir(RNFS.DocumentDirectoryPath + "/journal")
-//   .then(() => console.log("caught"))
-//   .catch((err) => console.log(err));
-
 const JournalScreen = ({ navigation, route }) => {
-  const { addEntry, entries } = useContext(JournalContext);
+  const { entries } = useContext(JournalContext);
   const isFocused = useIsFocused();
 
   useLayoutEffect(() => {
-    // const formattedEntries = entries.map((entry) => {
-    //   const date = entry.date.toLocaleDateString();
-
-    //   const data = { ...entry, date };
-
-    //   return data;
-    // });
-
     navigation.setOptions({
       headerRight: () => (
         <View style={{ marginRight: 5 }}>

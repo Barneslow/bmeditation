@@ -6,7 +6,6 @@ import {
   Text,
   StyleSheet,
   Modal,
-  Dimensions,
   Pressable,
 } from "react-native";
 import { Colors } from "../colors/colors";
@@ -15,8 +14,6 @@ import { truncateText } from "../helpers/text";
 import IconButton from "./buttons/IconButton";
 import YesNoButtons from "./buttons/YesNoButtons";
 
-const { width } = Dimensions.get("screen");
-
 const JournalEntryPreview = ({ item }) => {
   const journalCtx = useContext(JournalContext);
   const [modalVisible, setModalVisible] = useState(false);
@@ -24,7 +21,14 @@ const JournalEntryPreview = ({ item }) => {
   const { title, date, text, id } = item;
 
   return (
-    <Pressable style={styles.container}>
+    <Pressable
+      onPress={() =>
+        navigation.navigate("JournalEntry", {
+          id,
+        })
+      }
+      style={styles.container}
+    >
       <Modal
         animationType="slide"
         transparent={true}

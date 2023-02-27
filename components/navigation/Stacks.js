@@ -33,22 +33,13 @@ export const AuthorNavigator = () => {
             fontFamily: "SourceSansProBlack",
             fontSize: 24,
           },
-
-          // headerBackground: () => (
-          //   <LinearGradient
-          //     colors={["#F5E3E6", "#D9E4F5"]}
-          //     style={{ flex: 1 }}
-          //     start={{ x: 0, y: 0 }}
-          //     end={{ x: 1, y: 0 }}
-          //   />
-          // ),
         }}
       />
     </AuthorStack.Navigator>
   );
 };
 
-export const JournalNavigator = ({ route }) => {
+export const JournalNavigator = () => {
   return (
     <JournalStack.Navigator
       screenOptions={{

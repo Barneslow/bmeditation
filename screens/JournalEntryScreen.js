@@ -32,9 +32,7 @@ const JournalEntryScreen = ({ navigation, route }) => {
     >
       <ImageBackground
         style={styles.image}
-        source={{
-          uri: "https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGFwZXIlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-        }}
+        source={require("../assets/images/writingbackground.jpg")}
         imageStyle={{ borderRadius: 5 }}
       >
         <JournalTitleEdit data={entry} />

@@ -2,7 +2,6 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import Animated, { FadeInDown } from "react-native-reanimated";
 
 import { Colors } from "../../colors/colors";
-import ItemContainer from "../ui/ItemContainer";
 
 const Selection = ({ children, title, delay, onPress, subtext, amount }) => {
   return (

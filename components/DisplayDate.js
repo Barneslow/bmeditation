@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from "react-native";
 const DisplayDate = () => {
   const dateArr = new Date().toDateString().split(" ");
 
-  const day = dateArr[0];
   const month = dateArr[1];
   const date = dateArr[2];
   const year = dateArr[3];

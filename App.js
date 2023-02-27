@@ -13,7 +13,6 @@ import { useFonts } from "expo-font";
 import Tabs from "./components/navigation/Tabs";
 import { useEffect, useState } from "react";
 import AnimatedContextProvider from "./contexts/animated-context";
-import OnBoardingAnimation from "./screens/OnBoardingAnimation";
 import * as Notifications from "expo-notifications";
 import useNotifications from "./useNotifications";
 
@@ -31,23 +30,22 @@ const ref = createNavigationContainerRef();
 
 export default function App() {
   const [routeName, setRouteName] = useState();
-  const [animationOver, setAnimationOver] = useState(false);
 
-  // const { registerForPushNotificationsAsync, handleNotificationResponse } =
-  //   useNotifications();
+  const { registerForPushNotificationsAsync, handleNotificationResponse } =
+    useNotifications();
 
-  // useEffect(() => {
-  //   registerForPushNotificationsAsync();
+  useEffect(() => {
+    registerForPushNotificationsAsync();
 
-  //   const responseListnener = Notifications.addNotificationReceivedListener(
-  //     handleNotificationResponse
-  //   );
+    const responseListnener = Notifications.addNotificationReceivedListener(
+      handleNotificationResponse
+    );
 
-  //   return () => {
-  //     if (responseListnener)
-  //       Notifications.removeNotificationSubscription(responseListnener);
-  //   };
-  // }, []);
+    return () => {
+      if (responseListnener)
+        Notifications.removeNotificationSubscription(responseListnener);
+    };
+  }, []);
 
   const [fontsLoaded] = useFonts({
     OpenSansRegular: require("./assets/fonts/OpenSans/OpenSans-Regular.ttf"),
@@ -115,7 +113,3 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-
-// : (
-//   <OnBoardingAnimation setAnimationOver={setAnimationOver} />
-// )}

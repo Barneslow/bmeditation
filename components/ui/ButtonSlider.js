@@ -15,7 +15,7 @@ const _colors = {
   inactiveText: "white",
 };
 
-const ButtonSlider = ({ categories, onPress, children }) => {
+const ButtonSlider = ({ categories, onPress }) => {
   const ref = useRef();
 
   const [index, setIndex] = useState(0);

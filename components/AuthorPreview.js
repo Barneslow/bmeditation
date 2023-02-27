@@ -1,6 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import Animated, { FadeInRight } from "react-native-reanimated";
+import { Colors } from "../colors/colors";
 import { toTitleCase } from "../helpers/text";
 
 const AuthorPreview = ({ author, delay }) => {
@@ -26,7 +27,9 @@ const AuthorPreview = ({ author, delay }) => {
           <Text style={{ fontSize: 20, fontFamily: "SourceSansProBold" }}>
             {author?.name}
           </Text>
-          <Text style={styles.text}>{toTitleCase(author?.type)}</Text>
+          <Text style={[styles.text, { color: Colors.blue }]}>
+            {toTitleCase(author?.type)}
+          </Text>
         </View>
         <Text style={styles.text}>{author?.about}</Text>
       </Pressable>
@@ -39,7 +42,7 @@ export default AuthorPreview;
 const styles = StyleSheet.create({
   author: {
     padding: 10,
-    borderRadius: 20,
+    borderRadius: 10,
     elevation: 1,
     marginVertical: 5,
     elevation: 4,

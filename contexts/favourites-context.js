@@ -14,7 +14,7 @@ const DUMMY_FAVOR = [
     tags: ["life", "mentoring", "motivational"],
     id: 316,
     liked: false,
-    date: new Date(Date.now() - 86400000),
+    date: new Date(Date.now()),
   },
 ];
 

@@ -6,7 +6,7 @@ import JournalEntryPreview from "../components/JournalEntryPreview";
 import { JournalContext } from "../contexts/journal-context";
 
 const JournalEntriesScreen = ({ navigation, route }) => {
-  const { entries, removeEntry } = useContext(JournalContext);
+  const { entries } = useContext(JournalContext);
 
   return (
     <LinearGradient

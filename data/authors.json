@@ -1,5 +1,21 @@
 [
   {
+    "name": "Siddhartha Gautama",
+    "type": "eastern",
+    "imageUrl": "https://www.artmajeur.com/medias/standard/k/s/ksgreenart/artwork/12228500_picsart-05-01-05-48-17.jpg",
+    "location": "Nepal",
+    "about": "Siddhartha Gautama, most commonly referred to as the Buddha, was a wandering ascetic and religious teacher who lived in South Asia during the 6th or 5th century BCE and founded Buddhism.",
+    "period": "520BC"
+  },
+  {
+    "name": "Jalaluddin Rumi",
+    "type": "eastern",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7WaheRkAMOIuADEtKqFKJBMPFQCcdIl46rw&usqp=CAU",
+    "location": "Turkey",
+    "about": "Jalāl al-Dīn Muḥammad Rūmī, also known as Jalāl al-Dīn Muḥammad Balkhī, Mevlânâ/Mawlānā and Mevlevî/Mawlawī, but more popularly known simply as Rumi, was a 13th-century Persian poet, Hanafi faqih, Islamic scholar, Maturidi theologian and Sufi mystic originally from Greater Khorasan in Greater Iran",
+    "period": 1240
+  },
+  {
     "name": "Carl Jung",
     "type": "academic",
     "imageUrl": "https://tree-portraits-pgp.familysearchcdn.org/86fsg/thumb200s.jpg",
