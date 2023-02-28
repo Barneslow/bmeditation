@@ -29,10 +29,10 @@ export const MeditationContext = createContext({
   addTime: () => {},
 });
 
-const DUMMY_TIME = {
-  date: new Date(Date.now()),
-  time: 0,
-};
+// const DUMMY_TIME = {
+//   date: new Date(Date.now()),
+//   time: 0,
+// };
 
 export const MeditationContextProvider = ({ children }) => {
   const [dailyMeditationSessions, setDailyMeditationSessions] = useState([]);

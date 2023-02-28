@@ -7,16 +7,16 @@ import {
 } from "../helpers/fileStorage";
 import { QuoteContext } from "./quote-context";
 
-const DUMMY_FAVOR = [
-  {
-    quote: "I will not walk backward in life.",
-    author: "J.R.R Tolkien",
-    tags: ["life", "mentoring", "motivational"],
-    id: 316,
-    liked: false,
-    date: new Date(Date.now()),
-  },
-];
+// const DUMMY_FAVOR = [
+//   {
+//     quote: "I will not walk backward in life.",
+//     author: "J.R.R Tolkien",
+//     tags: ["life", "mentoring", "motivational"],
+//     id: 316,
+//     liked: false,
+//     date: new Date(Date.now()),
+//   },
+// ];
 
 export const FavouritesContext = createContext({
   favourites: [],

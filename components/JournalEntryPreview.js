@@ -110,13 +110,12 @@ const JournalEntryPreview = ({ item }) => {
 
           <View
             style={{
-              marginLeft: 2,
-              minHeight: 80,
               justifyContent: "space-between",
             }}
           >
             <IconButton
               name="book"
+              size={48}
               color={Colors.blue}
               onPress={() =>
                 navigation.navigate("JournalEntry", {
@@ -126,6 +125,7 @@ const JournalEntryPreview = ({ item }) => {
             />
             <IconButton
               name="trash"
+              size={48}
               color={Colors.red}
               onPress={() => setModalVisible(true)}
             />

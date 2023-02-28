@@ -72,6 +72,11 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 10,
     elevation: 1,
+    minHeight: 48,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    minWidth: 48,
   },
 
   icon: {

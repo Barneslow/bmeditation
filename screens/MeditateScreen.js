@@ -1,10 +1,10 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { useContext, useEffect, useState } from "react";
-import { StyleSheet } from "react-native";
+import { ActivityIndicator, StyleSheet } from "react-native";
 import AudioAnimation from "../components/AudioAnimation";
 import DropdownMenu from "../components/ui/DropdownMenu";
 import { Audio } from "expo-av";
-import LocalAudio, { MeditationContext } from "../contexts/audio-context";
+import LocalAudio from "../contexts/audio-context";
 import { useAnimationState } from "moti";
 import { AnimatedContext } from "../contexts/animated-context";
 import { useIsFocused } from "@react-navigation/native";
@@ -16,7 +16,7 @@ const MeditateScreen = () => {
   const [selectedAudio, setSelectedAudio] = useState("waterfall");
   const [playingSound, setPlayingSound] = useState();
   const [playingAnimation, setPlayingAnimation] = useState(false);
-  const audioCtx = useContext(MeditationContext);
+  const [loadingNewSound, setLoadingNewSound] = useState(false);
 
   const setInitialTrack = async () => {
     try {
@@ -36,9 +36,11 @@ const MeditateScreen = () => {
     setSelectedAudio(autioString);
 
     try {
+      setLoadingNewSound(true);
       const { sound } = await Audio.Sound.createAsync(LocalAudio[autioString]);
+      setLoadingNewSound(false);
+
       const status = await sound.getStatusAsync();
-      // setSoundDuration(status.durationMillis);
       setPlayingSound(sound);
     } catch (error) {
       console.log(error);
@@ -63,7 +65,7 @@ const MeditateScreen = () => {
       }
     }
 
-    return playingSound.unloadAsync();
+    return playingSound.stopAsync();
   }
 
   const animationState = useAnimationState({
@@ -103,13 +105,22 @@ const MeditateScreen = () => {
       colors={["#bbe6d9", "#c4e2c5", "#3cab85"]}
       style={styles.container}
     >
-      <DropdownMenu select={selectAudioHandler} isFocused={isFocused} />
-      <AudioAnimation
+      <DropdownMenu
         playingAnimation={playingAnimation}
-        animationState={animationState}
-        animate={animate}
-        selectedAudio={selectedAudio}
+        select={selectAudioHandler}
+        isFocused={isFocused}
       />
+
+      {playingSound && !loadingNewSound ? (
+        <AudioAnimation
+          playingAnimation={playingAnimation}
+          animationState={animationState}
+          animate={animate}
+          selectedAudio={selectedAudio}
+        />
+      ) : (
+        <ActivityIndicator size="large" />
+      )}
     </LinearGradient>
   );
 };

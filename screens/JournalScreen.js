@@ -18,7 +18,7 @@ const JournalScreen = ({ navigation, route }) => {
           <IconNumberOverlayButton
             name="bookmark"
             color="white"
-            size={35}
+            size={42}
             number={entries?.length}
             onPress={() => navigation.navigate("JournalEntries")}
           />

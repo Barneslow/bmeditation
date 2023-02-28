@@ -1,5 +1,5 @@
 import { StatusBar, View } from "react-native";
-import NavigationIcons from "../buttons/navigationIcons";
+import NavigationIcons from "../buttons/NavigationIcons";
 import TextAnimator from "./TextAnimator";
 
 const DailyQuotes = ({

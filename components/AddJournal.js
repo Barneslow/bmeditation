@@ -200,6 +200,7 @@ const styles = StyleSheet.create({
     padding: 8,
     fontSize: 18,
     fontFamily: "OpenSansRegular",
+    minHeight: 48,
   },
 
   textInput: {

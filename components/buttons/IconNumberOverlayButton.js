@@ -1,5 +1,6 @@
-import { Pressable, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { Colors } from "../../colors/colors";
 
 const IconNumberOverlayButton = ({ name, color, size, number, onPress }) => {
   return (
@@ -7,21 +8,8 @@ const IconNumberOverlayButton = ({ name, color, size, number, onPress }) => {
       onPress={onPress}
       style={({ pressed }) =>
         pressed
-          ? [
-              {
-                backgroundColor: "rgba(37,122,253, 1)",
-                borderRadius: 10,
-                elevation: 4,
-                padding: 1,
-              },
-              { transform: [{ scale: 0.9 }] },
-            ]
-          : {
-              backgroundColor: "rgba(37,122,253, 1)",
-              borderRadius: 10,
-              elevation: 4,
-              padding: 1,
-            }
+          ? [styles.button, { transform: [{ scale: 0.9 }] }]
+          : styles.button
       }
     >
       <View
@@ -52,3 +40,16 @@ const IconNumberOverlayButton = ({ name, color, size, number, onPress }) => {
 };
 
 export default IconNumberOverlayButton;
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: Colors.blue,
+    borderRadius: 10,
+    elevation: 4,
+    minHeight: 48,
+    minWidth: 48,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

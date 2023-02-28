@@ -43,7 +43,7 @@ const AudioAnimation = ({
             source={{
               uri: imageUri,
             }}
-            style={{ flex: 1, opacity: 0.7 }}
+            style={{ flex: 1, opacity: 0.5 }}
           />
         </Animated.View>
       )}

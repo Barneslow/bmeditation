@@ -6,14 +6,14 @@ import {
   updatedFolder,
 } from "../helpers/fileStorage";
 
-const DUMMY_ENTRIES = [
-  {
-    id: new Date(Date.now()) * Math.random(),
-    date: new Date(Date.now() - 86400000),
-    title: "Explore Your Mind",
-    text: "Journaling is a powerful tool for personal growth, self-reflection, and stress relief. It allows for creative expression, problem-solving, and memory preservation.",
-  },
-];
+// const DUMMY_ENTRIES = [
+//   {
+//     id: new Date(Date.now()) * Math.random(),
+//     date: new Date(Date.now() - 86400000),
+//     title: "Explore Your Mind",
+//     text: "Journaling is a powerful tool for personal growth, self-reflection, and stress relief. It allows for creative expression, problem-solving, and memory preservation.",
+//   },
+// ];
 
 export const JournalContext = createContext({
   entries: [],

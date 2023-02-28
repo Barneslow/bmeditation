@@ -1,6 +1,11 @@
 import { useContext, useLayoutEffect } from "react";
 import Animated, { FadeInDown } from "react-native-reanimated";
-import { Text, StyleSheet, ImageBackground } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  ImageBackground,
+  ActivityIndicator,
+} from "react-native";
 import JournalEntryEdit from "../components/JournalEntryEdit";
 import { JournalContext } from "../contexts/journal-context";
 import JournalTitleEdit from "../components/JournalTitleEdit";
@@ -11,6 +16,8 @@ const JournalEntryScreen = ({ navigation, route }) => {
   const entry = journalCtx.entries.find(
     (entry) => entry.id === route.params.id
   );
+
+  if (!entry) return <ActivityIndicator size="large" />;
 
   useLayoutEffect(() => {
     navigation.setOptions({

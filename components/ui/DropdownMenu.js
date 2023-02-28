@@ -17,7 +17,7 @@ const _colors = {
   inactive: "#228b22",
 };
 
-const DropdownMenu = ({ select, isFocused }) => {
+const DropdownMenu = ({ select, isFocused, playingAnimation }) => {
   const [content, setContent] = useState("waterfall");
   const [showContent, setShowContent] = useState(false);
   const [index, setIndex] = useState();
@@ -45,13 +45,10 @@ const DropdownMenu = ({ select, isFocused }) => {
   return (
     <View
       style={{
-        backgroundColor: "transparent",
-        overflow: "hidden",
-        borderBottomRightRadius: 5,
-        borderBottomLeftRadius: 5,
         paddingHorizontal: 20,
         position: "absolute",
         top: StatusBar.currentHeight,
+        zIndex: playingAnimation ? -1 : 1,
       }}
     >
       <FlatList
@@ -92,7 +89,7 @@ const DropdownMenu = ({ select, isFocused }) => {
                   alignItems: "center",
                   borderRadius: 20,
                   minWidth: 60,
-                  height: 40,
+                  minHeight: 48,
                   opacity: fIndex === index ? 1 : 0.5,
                 }}
               >
@@ -115,6 +112,7 @@ const DropdownMenu = ({ select, isFocused }) => {
               <Pressable
                 onPress={() => {
                   select(item);
+                  setShowContent(false);
                 }}
                 style={({ pressed }) =>
                   pressed
@@ -141,7 +139,8 @@ const styles = StyleSheet.create({
     padding: 5,
     borderBottomWidth: 0.5,
     borderRadius: 5,
-    backgroundColor: "rgba(255 ,255, 255, .5)",
+    minHeight: 48,
+    backgroundColor: "rgb(249,249,249)",
   },
 
   pressed: {

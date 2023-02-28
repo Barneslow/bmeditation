@@ -12,7 +12,7 @@ import ButtonSlider from "./ui/ButtonSlider";
 
 import authorData from "../data/authors.json";
 import { filterAuthorTypes } from "../helpers/filtering";
-import NavigationIcons from "./buttons/navigationIcons";
+import NavigationIcons from "./buttons/NavigationIcons";
 import TabButton from "./buttons/TabButton";
 import { useNavigation } from "@react-navigation/native";
 

@@ -13,7 +13,7 @@ const StaggeredFlatList = ({ data, children }) => {
       renderItem={({ item, index }) => {
         if (index === 0) return <View>{children}</View>;
         return (
-          <Animated.View entering={SlideInRight.delay(index * 300)}>
+          <Animated.View entering={SlideInRight.delay(index * 100)}>
             <AnimatedQuote quoteData={item} />
           </Animated.View>
         );

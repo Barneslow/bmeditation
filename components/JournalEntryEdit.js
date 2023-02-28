@@ -21,7 +21,7 @@ const validationSchema = Yup.object({
     .required("Text is required"),
 });
 
-const JournalEntryEdit = ({ data, routerEntries }) => {
+const JournalEntryEdit = ({ data }) => {
   const navigation = useNavigation();
   const [editing, setEditing] = useState(false);
 
@@ -108,14 +108,8 @@ const JournalEntryEdit = ({ data, routerEntries }) => {
             icon2="trash"
             funcYes={() => setEditing((prev) => !prev)}
             funcNo={() => {
-              const entries = routerEntries.filter(
-                (entry) => entry.id !== data.id
-              );
-              navigation.navigate("JournalEntries", entries);
-
-              setTimeout(() => {
-                journalCtx.removeEntry(data);
-              }, 2500);
+              navigation.navigate("JournalEntries");
+              journalCtx.removeEntry(data);
             }}
           />
         </ScrollView>

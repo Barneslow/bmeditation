@@ -31,7 +31,7 @@ const FavouritesScreen = ({ navigation }) => {
           style={{
             marginRight: 10,
           }}
-          size={36}
+          size={48}
           pressedColor={"white"}
           color={Colors.red}
         />

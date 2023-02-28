@@ -42,9 +42,13 @@ const styles = StyleSheet.create({
 
   button: {
     borderRadius: 10,
-    padding: 2,
     elevation: 4,
     paddingHorizontal: 5,
+    minHeight: 48,
+    minWidth: 48,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   text: {
